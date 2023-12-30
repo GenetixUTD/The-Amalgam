@@ -12,7 +12,9 @@ public class charactercontroller : MonoBehaviour
     [SerializeField] private Transform PlayerCamera;
     [SerializeField] private CharacterController Controller;
     [Space]
-    [SerializeField] private float Speed;
+    [SerializeField] private float WalkSpeed;
+    [SerializeField] private float SprintSpeed;
+    private float SpeedActual;
     [SerializeField] private float Jumpforce;
     [SerializeField] private float Sensitivity;
     private float Gravity = 9.81f;
@@ -37,6 +39,14 @@ public class charactercontroller : MonoBehaviour
     {
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput);
 
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            SpeedActual = SprintSpeed;
+        }
+        else
+        {
+            SpeedActual = WalkSpeed;
+        }
 
         if (Controller.isGrounded)
         {
@@ -53,7 +63,7 @@ public class charactercontroller : MonoBehaviour
             Velocity.y += Gravity * -2f * Time.deltaTime;
         }
 
-        Controller.Move(MoveVector * Speed * Time.deltaTime);
+        Controller.Move(MoveVector * SpeedActual * Time.deltaTime);
         Controller.Move(Velocity * Time.deltaTime);
     }
 

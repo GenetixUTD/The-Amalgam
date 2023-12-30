@@ -427,6 +427,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: Jumpforce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: WalkSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: SprintSpeed
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 5753313591837380372, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: m_RootOrder
       value: 1
