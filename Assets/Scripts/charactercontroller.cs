@@ -17,6 +17,13 @@ public class charactercontroller : MonoBehaviour
     [SerializeField] private float Sensitivity;
     private float Gravity = 9.81f;
 
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     void Update()
     {
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
