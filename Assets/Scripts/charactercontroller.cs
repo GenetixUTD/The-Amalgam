@@ -19,6 +19,11 @@ public class charactercontroller : MonoBehaviour
     [SerializeField] private float Sensitivity;
     private float Gravity = 9.81f;
 
+    public AudioClip WalkingSound;
+    public AudioClip SpringingSound;
+
+    public AudioSource AudioManager;
+
 
     private void Start()
     {
