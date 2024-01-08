@@ -19,11 +19,8 @@ public class charactercontroller : MonoBehaviour
     [SerializeField] private float Sensitivity;
     private float Gravity = 9.81f;
 
-    public AudioClip WalkingSound;
-    public AudioClip SpringingSound;
-
-    public AudioSource AudioManager;
-
+    public AudioSource WalkingSound;
+    public AudioSource SprintingSound;
 
     private void Start()
     {
@@ -38,6 +35,7 @@ public class charactercontroller : MonoBehaviour
 
         MovePlayer();
         MovePlayerCamera();
+        FootstepSounds();   
     }
 
     private void MovePlayer()
@@ -78,5 +76,28 @@ public class charactercontroller : MonoBehaviour
         xRot = Mathf.Clamp(xRot, -90, 90);
         transform.Rotate(0f, PlayerMouseInput.x * Sensitivity, 0f);
         PlayerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+    }
+
+    private void FootstepSounds()
+    {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                WalkingSound.enabled = false;
+                SprintingSound.enabled = true;
+            }
+            else
+            {
+                WalkingSound.enabled = true;
+                SprintingSound.enabled = false;
+            }
+        }
+        else
+        {
+            WalkingSound.enabled = false;
+            SprintingSound.enabled = false;
+        }
     }
 }
