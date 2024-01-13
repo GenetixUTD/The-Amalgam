@@ -22,6 +22,9 @@ public class charactercontroller : MonoBehaviour
     public AudioSource WalkingSound;
     public AudioSource SprintingSound;
 
+    private float InteractRange = 100.0f;
+    private GameObject previousLook;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -35,7 +38,8 @@ public class charactercontroller : MonoBehaviour
 
         MovePlayer();
         MovePlayerCamera();
-        FootstepSounds();   
+        FootstepSounds();
+        PlayerInteract();
     }
 
     private void MovePlayer()
@@ -99,5 +103,31 @@ public class charactercontroller : MonoBehaviour
             WalkingSound.enabled = false;
             SprintingSound.enabled = false;
         }
+    }
+
+    private void PlayerInteract()
+    {
+        RaycastHit hit;
+        Debug.DrawRay(PlayerCamera.position, 10* PlayerCamera.forward, Color.magenta);
+        if(Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
+        {
+            
+            Debug.Log(hit.transform.gameObject.name);
+            if(hit.transform.gameObject.tag == "Pickup")
+            {
+                hit.transform.gameObject.GetComponent<ItemPickup>().EnableGlow();
+                previousLook = hit.transform.gameObject;
+            }
+
+            
+        }
+
+        if (previousLook != null && previousLook.tag == "Pickup" && previousLook != hit.transform.gameObject)
+        {
+            previousLook.GetComponent<ItemPickup>().DisableGlow();
+            previousLook = null;
+        }
+
+
     }
 }
