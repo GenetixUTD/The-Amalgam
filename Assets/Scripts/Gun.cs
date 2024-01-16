@@ -53,6 +53,8 @@ public class Gun : MonoBehaviour
         if (CurrentMag != 0 && LastShot >= FireRate)
         {
             GunAnimator.SetTrigger("Shooting");
+            SmokeEffect.Play();
+            MuzzleFlash.Play();
             Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
             CurrentMag -= 1;
             LastShot = 0;
