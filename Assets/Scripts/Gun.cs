@@ -15,6 +15,8 @@ public class Gun : MonoBehaviour
     public Transform MuzzlePosition;
     public GameObject BulletPrefab;
 
+    public Animator GunAnimator;
+
     public Vector3 CameraPosition;
     public Vector3 ADSCameraPosition;
 
@@ -48,17 +50,18 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-            if (CurrentMag != 0 && LastShot >= FireRate)
-            {
-                Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
-                CurrentMag -= 1;
-                LastShot = 0;
-                //Play Shoot Sound;
-            }
-            else
-            {
-                //Play Click Sound;
-            }
+        if (CurrentMag != 0 && LastShot >= FireRate)
+        {
+            GunAnimator.SetTrigger("Shooting");
+            Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
+            CurrentMag -= 1;
+            LastShot = 0;
+            //Play Shoot Sound;
+        }
+        else
+        {
+            //Play Click Sound;
+        }
     }
 
     private void Reload()
