@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    private int CurrentMag;
+    [SerializeField]
+    private int CurrentMag = 12;
+    [SerializeField]
     private int MaxMagCount = 12;
-    private int CurrentReserves;
-    private float FireRate;
+    [SerializeField]
+    private int CurrentReserves = 5;
+    private float FireRate = .1f;
     private float LastShot;
-    private Transform MuzzlePosition;
-    private GameObject BulletPrefab;
+    public Transform MuzzlePosition;
+    public GameObject BulletPrefab;
 
-    private Vector3 CameraPosition;
-    private Vector3 ADSCameraPosition;
+    public Vector3 CameraPosition;
+    public Vector3 ADSCameraPosition;
 
-    private AudioClip ShootSound;
-    private AudioClip ClickSound;
+    public AudioClip ShootSound;
+    public AudioClip ClickSound;
 
-    private ParticleSystem SmokeEffect;
-    private ParticleSystem MuzzleFlash;
+    public ParticleSystem SmokeEffect;
+    public ParticleSystem MuzzleFlash;
 
     private void Start()
     {
@@ -32,39 +35,48 @@ public class Gun : MonoBehaviour
         {
             LastShot += Time.deltaTime;
         }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
     }
 
     private void Shoot()
     {
-        if (CurrentMag != 0 && LastShot >= FireRate)
-        {
-            Instantiate(BulletPrefab, MuzzlePosition);
-            CurrentMag -= 1;
-            LastShot = 0;
-            //Play Shoot Sound;
-        }
-        else
-        {
-            //Play Click Sound;
-        }
+            if (CurrentMag != 0 && LastShot >= FireRate)
+            {
+                Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
+                CurrentMag -= 1;
+                LastShot = 0;
+                //Play Shoot Sound;
+            }
+            else
+            {
+                //Play Click Sound;
+            }
     }
 
     private void Reload()
     {
-        if(CurrentMag < MaxMagCount && CurrentReserves != 0)
-        {
-            int temp = MaxMagCount - CurrentMag;
-            if (CurrentReserves >= temp)
+            if (CurrentMag < MaxMagCount && CurrentReserves != 0)
             {
-                CurrentReserves -= temp;
-                CurrentMag = MaxMagCount;
+                int temp = MaxMagCount - CurrentMag;
+                if (CurrentReserves >= temp)
+                {
+                    CurrentReserves -= temp;
+                    CurrentMag = MaxMagCount;
+                }
+                else if (CurrentReserves < temp)
+                {
+                    CurrentMag += CurrentReserves;
+                    CurrentReserves = 0;
+                }
             }
-            else if(CurrentReserves < temp)
-            {
-                CurrentMag += temp;
-                CurrentReserves = 0;
-            }
-        }
     }
 
     private void ADS()
