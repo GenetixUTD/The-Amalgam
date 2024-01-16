@@ -290,7 +290,8 @@ PrefabInstance:
       value: cyborg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 54c13ef47977ae54f83d7326c0beb3c8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c13ef47977ae54f83d7326c0beb3c8, type: 3}
