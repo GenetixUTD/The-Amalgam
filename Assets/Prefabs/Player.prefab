@@ -158,6 +158,7 @@ MonoBehaviour:
   Sensitivity: 2
   WalkingSound: {fileID: 5847041336144725850}
   SprintingSound: {fileID: 846093490190551828}
+  PlayerGun: {fileID: 5162420126348933095}
 --- !u!82 &5847041336144725850
 AudioSource:
   m_ObjectHideFlags: 0
@@ -561,3 +562,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2783316852510700893, guid: 6f07215a701932a41a74d509f38964e4, type: 3}
   m_PrefabInstance: {fileID: 3420833121740411264}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5162420126348933095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7556376453120566887, guid: 6f07215a701932a41a74d509f38964e4, type: 3}
+  m_PrefabInstance: {fileID: 3420833121740411264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1d879dcdaa1a04bb88aad2cd82216b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

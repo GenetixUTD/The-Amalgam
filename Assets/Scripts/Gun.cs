@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Gun : MonoBehaviour
 {
@@ -17,14 +18,16 @@ public class Gun : MonoBehaviour
 
     public Animator GunAnimator;
 
-    public Camera MainCamera;
-    public Camera ADSCamera;
+
 
     public AudioClip ShootSound;
     public AudioClip ClickSound;
 
     public ParticleSystem SmokeEffect;
     public ParticleSystem MuzzleFlash;
+
+    public TextMeshProUGUI ClipCountText;
+    public TextMeshProUGUI ReserveCountText;
 
 
     private void Update()
@@ -43,11 +46,11 @@ public class Gun : MonoBehaviour
             Reload();
         }
 
-        if(Input.GetMouseButtonDown(2) && !Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetMouseButtonDown(1) && !Input.GetKeyDown(KeyCode.LeftShift))
         {
             ADS();
         }
-        if(Input.GetMouseButtonUp(2))
+        if(Input.GetMouseButtonUp(1))
         {
             unADS();
         }
@@ -69,6 +72,9 @@ public class Gun : MonoBehaviour
         {
             //Play Click Sound;
         }
+
+        ClipCountText.SetText("" + CurrentMag);
+        ReserveCountText.SetText("/ " + CurrentReserves);
     }
 
     private void Reload()
@@ -87,17 +93,33 @@ public class Gun : MonoBehaviour
                     CurrentReserves = 0;
                 }
             }
+        UpdateClipCount();
+        UpdateReserveCount();
     }
 
     private void ADS()
     {
-        MainCamera.enabled = false;
-        ADSCamera.enabled = true;
+        this.gameObject.transform.parent.transform.localPosition = new Vector3(0f, -0.103f, 0.246000007f);
+
     }
 
     private void unADS()
     {
-        MainCamera.enabled = true;
-        ADSCamera.enabled = false;
+        this.gameObject.transform.parent.transform.localPosition = new Vector3(0.255939007f, -0.144660413f, 0.424523592f);
+    }
+
+    public void IncreaseReserves(int count)
+    {
+        CurrentReserves += count;
+    }
+
+    public void UpdateReserveCount()
+    {
+        ReserveCountText.SetText("/ " + CurrentReserves);
+    }
+
+    public void UpdateClipCount()
+    {
+        ClipCountText.SetText("" + CurrentMag);
     }
 }

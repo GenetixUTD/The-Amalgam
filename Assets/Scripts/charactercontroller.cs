@@ -25,6 +25,9 @@ public class charactercontroller : MonoBehaviour
     private float InteractRange = 100.0f;
     private GameObject previousLook;
 
+    [SerializeField]
+    private Gun PlayerGun;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -111,17 +114,22 @@ public class charactercontroller : MonoBehaviour
         Debug.DrawRay(PlayerCamera.position, 10* PlayerCamera.forward, Color.magenta);
         if(Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
         {
-            if(hit.transform.gameObject.tag == "Pickup")
+            if(hit.transform.gameObject.tag == "AmmoBox")
             {
                 hit.transform.gameObject.GetComponent<ItemPickup>().EnableGlow();
                 previousLook = hit.transform.gameObject;
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.transform.gameObject.GetComponent<ItemPickup>().InteractedWith(PlayerGun);
+                }
+                
             }
 
             
         }
 
 
-        if (previousLook != null && previousLook.tag == "Pickup")
+        if (previousLook != null && previousLook.tag == "AmmoBox")
         {
             if (!Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
             {
