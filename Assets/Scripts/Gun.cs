@@ -17,8 +17,8 @@ public class Gun : MonoBehaviour
 
     public Animator GunAnimator;
 
-    public Vector3 CameraPosition;
-    public Vector3 ADSCameraPosition;
+    public Camera MainCamera;
+    public Camera ADSCamera;
 
     public AudioClip ShootSound;
     public AudioClip ClickSound;
@@ -26,10 +26,6 @@ public class Gun : MonoBehaviour
     public ParticleSystem SmokeEffect;
     public ParticleSystem MuzzleFlash;
 
-    private void Start()
-    {
-        CameraPosition = Camera.main.transform.localPosition;
-    }
 
     private void Update()
     {
@@ -45,6 +41,15 @@ public class Gun : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             Reload();
+        }
+
+        if(Input.GetMouseButtonDown(2) && !Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            ADS();
+        }
+        if(Input.GetMouseButtonUp(2))
+        {
+            unADS();
         }
     }
 
@@ -86,11 +91,13 @@ public class Gun : MonoBehaviour
 
     private void ADS()
     {
-        Camera.main.transform.localPosition = ADSCameraPosition;
+        MainCamera.enabled = false;
+        ADSCamera.enabled = true;
     }
 
     private void unADS()
     {
-        Camera.main.transform.localPosition = CameraPosition;
+        MainCamera.enabled = true;
+        ADSCamera.enabled = false;
     }
 }

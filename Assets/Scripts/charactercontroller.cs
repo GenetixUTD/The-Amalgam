@@ -111,8 +111,6 @@ public class charactercontroller : MonoBehaviour
         Debug.DrawRay(PlayerCamera.position, 10* PlayerCamera.forward, Color.magenta);
         if(Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
         {
-            
-            Debug.Log(hit.transform.gameObject.name);
             if(hit.transform.gameObject.tag == "Pickup")
             {
                 hit.transform.gameObject.GetComponent<ItemPickup>().EnableGlow();
@@ -122,12 +120,19 @@ public class charactercontroller : MonoBehaviour
             
         }
 
-        if (previousLook != null && previousLook.tag == "Pickup" && previousLook != hit.transform.gameObject)
+
+        if (previousLook != null && previousLook.tag == "Pickup")
         {
-            previousLook.GetComponent<ItemPickup>().DisableGlow();
-            previousLook = null;
+            if (!Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
+            {
+                previousLook.GetComponent<ItemPickup>().DisableGlow();
+                previousLook = null;
+            }
+            else if(previousLook != hit.transform.gameObject)
+            {
+                previousLook.GetComponent<ItemPickup>().DisableGlow();
+                previousLook = null;
+            }
         }
-
-
     }
 }
