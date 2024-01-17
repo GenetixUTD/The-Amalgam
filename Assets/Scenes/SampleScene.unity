@@ -992,6 +992,18 @@ PrefabInstance:
       propertyPath: SprintSpeed
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 5071137754194687277, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071137754194687277, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071137754194687277, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5162420126348933095, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: ClipCountText
       value: 
@@ -1052,9 +1064,17 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5984691410700145425, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6299543285516025590, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875547367349350629, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: m_Height
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3963825691624008306, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}

@@ -28,8 +28,14 @@ public class charactercontroller : MonoBehaviour
     [SerializeField]
     private Gun PlayerGun;
 
+    private bool isCrouching;
+
+    public float StandingHeight;
+    public float CrouchingHeight;
+
     private void Start()
     {
+        Controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -56,6 +62,15 @@ public class charactercontroller : MonoBehaviour
         else
         {
             SpeedActual = WalkSpeed;
+        }
+
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            Controller.height = CrouchingHeight;
+        }
+        else
+        {
+            Controller.height = StandingHeight;
         }
 
         if (Controller.isGrounded)

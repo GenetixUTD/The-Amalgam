@@ -22,6 +22,11 @@ public class Gun : MonoBehaviour
 
     public AudioClip ShootSound;
     public AudioClip ClickSound;
+    public AudioClip ReloadSound;
+
+    private bool isReloading = false;
+
+    private AudioSource AudioManager;
 
     public ParticleSystem SmokeEffect;
     public ParticleSystem MuzzleFlash;
@@ -29,6 +34,10 @@ public class Gun : MonoBehaviour
     public TextMeshProUGUI ClipCountText;
     public TextMeshProUGUI ReserveCountText;
 
+    private void Start()
+    {
+        AudioManager = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -54,33 +63,42 @@ public class Gun : MonoBehaviour
         {
             unADS();
         }
+        
+        if(!AudioManager.isPlaying)
+        {
+            isReloading = false;
+        }
     }
 
     private void Shoot()
     {
-        if (CurrentMag != 0 && LastShot >= FireRate)
+        if (!isReloading)
         {
-            GunAnimator.SetTrigger("Shooting");
-            SmokeEffect.Play();
-            MuzzleFlash.Play();
-            Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
-            CurrentMag -= 1;
-            LastShot = 0;
-            //Play Shoot Sound;
-        }
-        else
-        {
-            //Play Click Sound;
-        }
+            if (CurrentMag != 0 && LastShot >= FireRate)
+            {
+                GunAnimator.SetTrigger("Shooting");
+                SmokeEffect.Play();
+                MuzzleFlash.Play();
+                Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
+                CurrentMag -= 1;
+                LastShot = 0;
+                AudioManager.PlayOneShot(ShootSound);
+            }
+            else
+            {
+                //Play Click Sound;
+            }
 
-        ClipCountText.SetText("" + CurrentMag);
-        ReserveCountText.SetText("/ " + CurrentReserves);
+            UpdateClipCount();
+            UpdateReserveCount();
+        }
     }
 
     private void Reload()
     {
             if (CurrentMag < MaxMagCount && CurrentReserves != 0)
             {
+                isReloading = true;
                 int temp = MaxMagCount - CurrentMag;
                 if (CurrentReserves >= temp)
                 {
@@ -93,6 +111,7 @@ public class Gun : MonoBehaviour
                     CurrentReserves = 0;
                 }
             }
+        AudioManager.PlayOneShot(ReloadSound);
         UpdateClipCount();
         UpdateReserveCount();
     }

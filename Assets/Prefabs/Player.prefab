@@ -159,6 +159,8 @@ MonoBehaviour:
   WalkingSound: {fileID: 5847041336144725850}
   SprintingSound: {fileID: 846093490190551828}
   PlayerGun: {fileID: 5162420126348933095}
+  StandingHeight: 2
+  CrouchingHeight: 0.5
 --- !u!82 &5847041336144725850
 AudioSource:
   m_ObjectHideFlags: 0
