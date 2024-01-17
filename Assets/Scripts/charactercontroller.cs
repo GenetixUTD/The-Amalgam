@@ -55,7 +55,7 @@ public class charactercontroller : MonoBehaviour
     {
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput);
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && !isCrouching)
         {
             SpeedActual = SprintSpeed;
         }
@@ -67,10 +67,12 @@ public class charactercontroller : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftControl))
         {
             Controller.height = CrouchingHeight;
+            isCrouching = true;
         }
         else
         {
             Controller.height = StandingHeight;
+            isCrouching = false;
         }
 
         if (Controller.isGrounded)
@@ -105,7 +107,7 @@ public class charactercontroller : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && !isCrouching)
             {
                 WalkingSound.enabled = false;
                 SprintingSound.enabled = true;
