@@ -46,11 +46,11 @@ public class Gun : MonoBehaviour
             Reload();
         }
 
-        if(Input.GetMouseButtonDown(1) && !Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetMouseButtonDown(1) && !Input.GetKey(KeyCode.LeftShift))
         {
             ADS();
         }
-        if(Input.GetMouseButtonUp(1))
+        if(Input.GetMouseButtonUp(1) || Input.GetKey(KeyCode.LeftShift))
         {
             unADS();
         }
