@@ -26,7 +26,7 @@ public class charactercontroller : MonoBehaviour
     private GameObject previousLook;
 
     [SerializeField]
-    private Gun PlayerGun;
+    public Gun PlayerGun;
 
     private bool isCrouching;
 
@@ -137,7 +137,7 @@ public class charactercontroller : MonoBehaviour
                 previousLook = hit.transform.gameObject;
                 if(Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.transform.gameObject.GetComponent<ItemPickup>().InteractedWith(PlayerGun);
+                    hit.transform.gameObject.GetComponent<ItemPickup>().InteractedWith(this);
                 }
                 
             }

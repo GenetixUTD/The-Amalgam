@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+public class ItemPickup : Interactable
 {
     public Outline ItemGlow;
     public enum PickupType
@@ -29,10 +29,11 @@ public class ItemPickup : MonoBehaviour
         ItemGlow.enabled = false;
     }
 
-    public void InteractedWith(Gun playergun)
+    public override void InteractedWith(charactercontroller PlayerCharacter)
     {
         if(InteractableType == PickupType.Ammo)
         {
+            Gun playergun = PlayerCharacter.PlayerGun;
             playergun.IncreaseReserves(AmmoBoxSize);
             Destroy(this.gameObject);
             playergun.UpdateReserveCount();
