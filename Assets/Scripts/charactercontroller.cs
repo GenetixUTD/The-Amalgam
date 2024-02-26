@@ -9,6 +9,14 @@ public class charactercontroller : MonoBehaviour
     private Vector2 PlayerMouseInput;
     private float xRot;
 
+    public enum PlayerState
+    {
+        Active,
+        Hiding
+    }
+
+    public PlayerState ActiveState;
+
     [SerializeField] private Transform PlayerCamera;
     [SerializeField] private CharacterController Controller;
     [Space]
@@ -22,7 +30,7 @@ public class charactercontroller : MonoBehaviour
     public AudioSource WalkingSound;
     public AudioSource SprintingSound;
 
-    private float InteractRange = 100.0f;
+    private float InteractRange = 50.0f;
     private GameObject previousLook;
 
     [SerializeField]
@@ -38,6 +46,7 @@ public class charactercontroller : MonoBehaviour
         Controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        ActiveState = PlayerState.Active;
     }
 
     void Update()
@@ -45,10 +54,18 @@ public class charactercontroller : MonoBehaviour
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        MovePlayer();
-        MovePlayerCamera();
-        FootstepSounds();
-        PlayerInteract();
+        if(ActiveState == PlayerState.Active)
+        {
+            MovePlayer();
+            MovePlayerCamera();
+            FootstepSounds();
+            PlayerInteract();
+        }
+        else if(ActiveState == PlayerState.Hiding)
+        {
+            MovePlayerCamera();
+        }
+        
     }
 
     private void MovePlayer()
@@ -141,22 +158,47 @@ public class charactercontroller : MonoBehaviour
                 }
                 
             }
+            if(hit.transform.gameObject.tag == "HideLocker")
+            {
+                hit.transform.gameObject.transform.GetComponentInParent<Locker>().EnableGlow();
+                previousLook = hit.transform.gameObject;
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.transform.gameObject.GetComponentInParent<Locker>().InteractedWith(this);
+                }
+            }
 
             
         }
 
 
-        if (previousLook != null && previousLook.tag == "AmmoBox")
+        if (previousLook != null)
         {
-            if (!Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
+            if (previousLook.tag == "AmmoBox")
             {
-                previousLook.GetComponent<ItemPickup>().DisableGlow();
-                previousLook = null;
+                if (!Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
+                {
+                    previousLook.GetComponent<ItemPickup>().DisableGlow();
+                    previousLook = null;
+                }
+                else if (previousLook != hit.transform.gameObject)
+                {
+                    previousLook.GetComponent<ItemPickup>().DisableGlow();
+                    previousLook = null;
+                }
             }
-            else if(previousLook != hit.transform.gameObject)
+            else if(previousLook.tag == "HideLocker")
             {
-                previousLook.GetComponent<ItemPickup>().DisableGlow();
-                previousLook = null;
+                if (!Physics.Raycast(PlayerCamera.position, PlayerCamera.forward, out hit, InteractRange))
+                {
+                    previousLook.GetComponentInParent<Locker>().DisableGlow();
+                    previousLook = null;
+                }
+                else if (previousLook != hit.transform.gameObject)
+                {
+                    previousLook.GetComponentInParent<Locker>().DisableGlow();
+                    previousLook = null;
+                }
             }
         }
     }

@@ -96,7 +96,7 @@ public class Gun : MonoBehaviour
 
     private void Reload()
     {
-            if (CurrentMag < MaxMagCount && CurrentReserves != 0)
+            if (CurrentMag != MaxMagCount && CurrentReserves != 0)
             {
                 isReloading = true;
                 int temp = MaxMagCount - CurrentMag;
@@ -110,8 +110,8 @@ public class Gun : MonoBehaviour
                     CurrentMag += CurrentReserves;
                     CurrentReserves = 0;
                 }
-            }
-        AudioManager.PlayOneShot(ReloadSound);
+            AudioManager.PlayOneShot(ReloadSound);
+        }
         UpdateClipCount();
         UpdateReserveCount();
     }
