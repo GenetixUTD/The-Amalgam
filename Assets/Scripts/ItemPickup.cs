@@ -31,6 +31,7 @@ public class ItemPickup : Interactable
 
     public override void InteractedWith(charactercontroller PlayerCharacter)
     {
+        base.InteractedWith(PlayerCharacter);
         if(InteractableType == PickupType.Ammo)
         {
             Gun playergun = PlayerCharacter.PlayerGun;
