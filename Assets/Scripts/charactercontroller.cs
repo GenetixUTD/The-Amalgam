@@ -30,7 +30,7 @@ public class charactercontroller : MonoBehaviour
     public AudioSource WalkingSound;
     public AudioSource SprintingSound;
 
-    private float InteractRange = 50.0f;
+    private float InteractRange = 5.0f;
     private GameObject previousLook;
 
     [SerializeField]
@@ -56,6 +56,7 @@ public class charactercontroller : MonoBehaviour
 
         if(ActiveState == PlayerState.Active)
         {
+            PlayerGun.gameObject.SetActive(true);
             MovePlayer();
             MovePlayerCamera();
             FootstepSounds();
@@ -63,6 +64,7 @@ public class charactercontroller : MonoBehaviour
         }
         else if(ActiveState == PlayerState.Hiding)
         {
+            PlayerGun.gameObject.SetActive(false);
             MovePlayerCamera();
         }
         
