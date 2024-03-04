@@ -11,10 +11,15 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PlayerCharacter.ActiveState = charactercontroller.PlayerState.Active;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            this.gameObject.SetActive(false);
+            Unpause();
         }
+    }
+
+    public void Unpause()
+    {
+        PlayerCharacter.ActiveState = charactercontroller.PlayerState.Active;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        this.gameObject.SetActive(false);
     }
 }
