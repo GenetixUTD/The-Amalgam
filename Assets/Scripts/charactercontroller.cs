@@ -12,7 +12,8 @@ public class charactercontroller : MonoBehaviour
     public enum PlayerState
     {
         Active,
-        Hiding
+        Hiding,
+        Paused
     }
 
     public PlayerState ActiveState;
@@ -32,6 +33,8 @@ public class charactercontroller : MonoBehaviour
 
     private float InteractRange = 5.0f;
     private GameObject previousLook;
+
+    public GameObject PauseMenu;
 
     [SerializeField]
     public Gun PlayerGun;
@@ -66,6 +69,11 @@ public class charactercontroller : MonoBehaviour
         {
             PlayerGun.gameObject.SetActive(false);
             MovePlayerCamera();
+        }
+        else if(ActiveState == PlayerState.Paused)
+        {
+            PlayerGun.gameObject.SetActive(false);
+            //Do Nothing.
         }
         
     }
@@ -202,6 +210,14 @@ public class charactercontroller : MonoBehaviour
                     previousLook = null;
                 }
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            this.ActiveState = PlayerState.Paused;
         }
     }
 }

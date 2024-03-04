@@ -34,9 +34,13 @@ public class Gun : MonoBehaviour
     public TextMeshProUGUI ClipCountText;
     public TextMeshProUGUI ReserveCountText;
 
+    public TextMeshProUGUI PauseReserveCountText;
+
     private void Start()
     {
         AudioManager = GetComponent<AudioSource>();
+        UpdateClipCount();
+        UpdateReserveCount();
     }
 
     private void Update()
@@ -135,6 +139,7 @@ public class Gun : MonoBehaviour
     public void UpdateReserveCount()
     {
         ReserveCountText.SetText("/ " + CurrentReserves);
+        PauseReserveCountText.SetText(""+CurrentReserves);
     }
 
     public void UpdateClipCount()
