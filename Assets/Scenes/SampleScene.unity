@@ -1685,12 +1685,72 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 449374090}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SettingsTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019596845054338726, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266193048682720612, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266193048682720612, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266193048682720612, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266193048682720612, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7492958841553520458, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7492958841553520458, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032189299606845565, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032189299606845565, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700235488120303146, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700235488120303146, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+      propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
