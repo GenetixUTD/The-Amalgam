@@ -114,8 +114,9 @@ public class Gun : MonoBehaviour
                     CurrentMag += CurrentReserves;
                     CurrentReserves = 0;
                 }
-            AudioManager.PlayOneShot(ReloadSound);
-        }
+                GunAnimator.SetTrigger("Reloading");
+                ReloadSFX();
+            }
         UpdateClipCount();
         UpdateReserveCount();
     }
@@ -145,5 +146,10 @@ public class Gun : MonoBehaviour
     public void UpdateClipCount()
     {
         ClipCountText.SetText("" + CurrentMag);
+    }
+
+    public void ReloadSFX()
+    {
+        AudioManager.PlayOneShot(ReloadSound);
     }
 }

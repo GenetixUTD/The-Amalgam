@@ -21,7 +21,7 @@
 				<Property Name="General\LatestLanguage" Type="int32" Value="684519430"/>
 				<Property Name="General\LatestPlatform" Type="string" Value="Mac"/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
-				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="12G/qa1/y0ye+zhijU+rIwEAT1gPAAAAwJS2Z/h/AAB4+7dwlwEAAAAAAACXAQAAwJS2Z/h/AAA0lBho+H8AALBo/ASXAQAAAAAAAJcBAAAIAAAAlwEAAGjiT1gPAAAAkBAtaPh/AACvES1o+H8AAJAQLWj4fwAAwJS2Z/h/AADAlLZn+H8AAHj7t3CXAQAAAQAAAIM1rf+7/a5DqbCCIwKWvgMBAE9YDwAAAMCUtmf4fwAAePu3cJcBAAAAAAAAlwEAAMCUtmf4fwAANJQYaPh/AACwaPwElwEAAAAAAACXAQAACAAAAJcBAABo4k9YDwAAAJAQLWj4fwAArxEtaPh/AACQEC1o+H8AAMCUtmf4fwAAwJS2Z/h/AAB4+7dwlwEAAAEAAAA="/>
+				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups_v2" Type="string" Value="12G/qa1/y0ye+zhijU+rIwEAU4D+AAAAwJSzRPh/AAC4dckx5wIAAAAAAADnAgAAwJSzRPh/AAA0lD9F+H8AAKDgIkbnAgAAAAAAAOcCAAAIAAAA5wIAAOjmU4D+AAAAkBBURfh/AACvEVRF+H8AAJAQVEX4fwAAwJSzRPh/AADAlLNE+H8AALh1yTHnAgAAAQAAAIM1rf+7/a5DqbCCIwKWvgMBAFOA/gAAAMCUs0T4fwAAuHXJMecCAAAAAAAA5wIAAMCUs0T4fwAANJQ/Rfh/AACg4CJG5wIAAAAAAADnAgAACAAAAOcCAADo5lOA/gAAAJAQVEX4fwAArxFURfh/AACQEFRF+H8AAMCUs0T4fwAAwJSzRPh/AAC4dckx5wIAAAEAAAA="/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
