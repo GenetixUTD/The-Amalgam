@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AmalgamCentralAI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float stunHealth;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private float movementSpeed;
+    private float rotationSpeed;
+
+    private Vector3 targetLocation;
+    public GameObject navMeshCenter;
+
+    private NavMeshAgent movementAgent;
+    public GameObject playerTracker;
+    public Transform movementGoal;
+    
 }

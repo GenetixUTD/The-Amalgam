@@ -1,18 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EmptyState : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    AmalgamCentralAI amalgamBrain;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public virtual void stateStart(AmalgamCentralAI amalgamBrain) { }
+    public virtual Type stateUpdate(AmalgamCentralAI amalgamBrain) { return null; }
+    public virtual void stateExit(AmalgamCentralAI amalgamBrain) { }
 }
