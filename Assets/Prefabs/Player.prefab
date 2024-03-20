@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 846093490190551828}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   Sensitivity: 2
   WalkingSound: {fileID: 5847041336144725850}
   SprintingSound: {fileID: 846093490190551828}
+  PauseMenu: {fileID: 0}
   PlayerGun: {fileID: 5162420126348933095}
   StandingHeight: 3
   CrouchingHeight: 1
@@ -365,7 +366,7 @@ GameObject:
   - component: {fileID: 5753313591837380372}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -550,6 +551,10 @@ PrefabInstance:
     - target: {fileID: 6612781457850865785, guid: 6f07215a701932a41a74d509f38964e4, type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612781457850865785, guid: 6f07215a701932a41a74d509f38964e4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7556376453120566887, guid: 6f07215a701932a41a74d509f38964e4, type: 3}
       propertyPath: MainCamera

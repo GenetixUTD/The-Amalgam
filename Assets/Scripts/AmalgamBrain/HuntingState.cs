@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HuntingState : MonoBehaviour
+public class HuntingState : EmptyState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
-        
+        base.stateStart(amalgamBrain);
     }
 
-    // Update is called once per frame
-    void Update()
+    public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        
+        base.stateUpdate(amalgamBrain);
+    }
+
+    public override void stateExit(AmalgamCentralAI amalgamBrain)
+    {
+        base.stateExit(amalgamBrain);
     }
 }

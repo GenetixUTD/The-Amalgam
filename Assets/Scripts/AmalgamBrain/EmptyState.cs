@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EmptyState : MonoBehaviour
 {
-    AmalgamCentralAI amalgamBrain;
+    public AmalgamCentralAI amalgamBrain;
 
     public virtual void stateStart(AmalgamCentralAI amalgamBrain) { }
     public virtual Type stateUpdate(AmalgamCentralAI amalgamBrain) { return null; }
