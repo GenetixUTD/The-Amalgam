@@ -46,6 +46,10 @@ public class HauntingState : EmptyState
         {
             return typeof(LeavingState);
         }
+        else if(lockerTracker.minigameFailed)
+        {
+            return typeof(StalkingState);
+        }
         return typeof(HauntingState);
     }
 
