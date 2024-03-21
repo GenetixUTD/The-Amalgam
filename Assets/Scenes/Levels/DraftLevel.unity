@@ -31955,7 +31955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487603925}
   m_Layer: 0
-  m_Name: -Floor- (1)
+  m_Name: -Ceiling-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31969,7 +31969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487603924}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -0.31370544, y: 8.173376, z: -142.4721}
+  m_LocalPosition: {x: -0.063705444, y: 7.44, z: -142.4721}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children:
