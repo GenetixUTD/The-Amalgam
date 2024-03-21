@@ -13,7 +13,8 @@ public class charactercontroller : MonoBehaviour
     {
         Active,
         Hiding,
-        Paused
+        Paused,
+        HidingGame
     }
 
     public PlayerState ActiveState;
@@ -43,6 +44,8 @@ public class charactercontroller : MonoBehaviour
 
     public float StandingHeight;
     public float CrouchingHeight;
+
+    public GameObject hidingLocker;
 
     private void Start()
     {
@@ -175,6 +178,7 @@ public class charactercontroller : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.E))
                 {
                     hit.transform.gameObject.GetComponentInParent<Locker>().InteractedWith(this);
+                    hidingLocker = hit.transform.parent.gameObject;
                 }
             }
 

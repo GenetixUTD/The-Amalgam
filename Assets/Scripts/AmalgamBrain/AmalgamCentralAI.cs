@@ -12,12 +12,21 @@ public class AmalgamCentralAI : MonoBehaviour
 
     public bool playerInSight;
 
+    public bool interuptedEvent;
+
     private Vector3 targetLocation;
     public GameObject navMeshCenter;
 
     private NavMeshAgent movementAgent;
     public GameObject playerTracker;
     public Transform movementGoal;
+
+    public Transform[] leavingAreas;
+
+    private void Start()
+    {
+        interuptedEvent = false;
+    }
 
     private void Update()
     {

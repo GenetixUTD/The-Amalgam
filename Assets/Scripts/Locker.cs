@@ -21,24 +21,34 @@ public class Locker : Interactable
 
     private bool Activated;
 
+    public bool minigameOccuring;
+    public bool minigameComplete;
+    public bool minigameFailed;
+
     private void Start()
     {
         Activated = true;
         HidingInside = false;
+        minigameOccuring = false;
+        minigameComplete = false;
+        minigameFailed = false;
         hideTimer = 0.0f;
     }
 
     private void Update()
     {
-        if(HidingInside && Input.GetKeyDown(KeyCode.E) && hideTimer > 0)
+        if (HidingInside && Input.GetKeyDown(KeyCode.E) && hideTimer > 0 || minigameFailed)
         {
             Debug.Log("Unhiding");
             Player.GetComponent<CharacterController>().enabled = false;
             Player.transform.position = ExitArea.position;
             Player.GetComponent<CharacterController>().enabled = true;
             Player.GetComponent<charactercontroller>().ActiveState = charactercontroller.PlayerState.Active;
+            Player.GetComponent<charactercontroller>().hidingLocker = null;
+            Start();
             HidingInside = false;
         }
+        if(minigameOccuring)
         hideTimer += Time.deltaTime;
     }
 
@@ -68,5 +78,18 @@ public class Locker : Interactable
             PlayerCharacter.GetComponent<CharacterController>().enabled = true;
             Player = PlayerCharacter.gameObject;
         }
+    }
+
+    public IEnumerator PlayMinigame()
+    {
+        HeartbeatMinigame();
+        yield return new WaitForSeconds(15);
+    }
+
+    private void HeartbeatMinigame()
+    {
+        // minigame logic
+        // if successful -> minigameCompleted = true;
+        // if failure -> minigameFailed = true;
     }
 }

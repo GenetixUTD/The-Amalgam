@@ -13,6 +13,8 @@ public class HuntingState : EmptyState
     public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
     {
         base.stateUpdate(amalgamBrain);
+
+        return typeof(HuntingState);
     }
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)

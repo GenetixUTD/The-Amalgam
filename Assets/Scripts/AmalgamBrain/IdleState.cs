@@ -7,24 +7,23 @@ public class IdleState : EmptyState
 {
 
     public bool idledEnough;
-    public bool interuptedEvent;
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
         base.stateStart(amalgamBrain);
         idledEnough = false;
-        interuptedEvent = false;
+        amalgamBrain.interuptedEvent = false;
         StartCoroutine(IdleTimer());
     }
 
     public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
     {
         base.stateUpdate(amalgamBrain);
-        if (idledEnough && !interuptedEvent)
+        if (idledEnough && !amalgamBrain.interuptedEvent)
         {
             return typeof(RoamingState);
         }
-        else if(interuptedEvent)
+        else if(amalgamBrain.interuptedEvent)
         {
             return typeof(HuntingState);
         }
