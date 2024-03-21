@@ -37,7 +37,7 @@ public class Locker : Interactable
 
     private void Update()
     {
-        if (HidingInside && Input.GetKeyDown(KeyCode.E) && hideTimer > 0 || minigameFailed)
+        if ((HidingInside && Input.GetKeyDown(KeyCode.E) && hideTimer > 0 )|| minigameFailed)
         {
             Debug.Log("Unhiding");
             Player.GetComponent<CharacterController>().enabled = false;
@@ -49,6 +49,9 @@ public class Locker : Interactable
             HidingInside = false;
         }
         if(minigameOccuring)
+        {
+
+        }
         hideTimer += Time.deltaTime;
     }
 
