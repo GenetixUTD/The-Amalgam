@@ -11,18 +11,23 @@ public class StalkingState : EmptyState
     private Coroutine trackTimerCR;
     private NavMeshAgent agent;
 
+    public StalkingState()
+    {
+
+    }
+
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
-        base.stateStart(amalgamBrain);
+
         amalgamBrain.playerInSight = true;
         playerLost = false;
         playerCRRunning = false;
         agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
-    public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
+    public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        base.stateUpdate(amalgamBrain);
+
         if(!amalgamBrain.playerInSight && !playerCRRunning)
         {
             trackTimerCR = StartCoroutine(trackPlayerOutofSight());
@@ -40,17 +45,17 @@ public class StalkingState : EmptyState
 
         if(playerLost)
         {
-            return typeof(RoamingState);
+            return 0;
         }
         else
         {
-            return typeof(StalkingState);
+            return 5;
         }
     }
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {
-        base.stateExit(amalgamBrain);
+
     }
 
     public IEnumerator trackPlayerOutofSight()

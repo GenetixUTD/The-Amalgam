@@ -1,8 +1,9 @@
 using System.Collections;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class RoamingState : EmptyState
 {
@@ -12,20 +13,23 @@ public class RoamingState : EmptyState
 
     private NavMeshAgent agent;
 
+    public RoamingState()
+    {
+
+    }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
-        base.stateStart(amalgamBrain);
         //Define search range
-        SearchRange = 10f;
+        SearchRange = 100f;
         //Amalgam serves as the center of the search area
-        centerPoint = this.gameObject.transform;
-        agent = this.gameObject.GetComponent<NavMeshAgent>();
+        //Debug.Log("fetching center point");
+        centerPoint = amalgamBrain.gameObject.transform;
+        agent = amalgamBrain.gameObject.GetComponent<NavMeshAgent>();
         pointFound = false;
     }
 
-    public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
+    public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        base.stateUpdate(amalgamBrain);
         if(!pointFound)
         {
             //Find suitable Roam Position
@@ -41,15 +45,15 @@ public class RoamingState : EmptyState
         else if(agent.remainingDistance <= agent.stoppingDistance && pointFound)
         {
             //idle
-            return typeof(IdleState);
+            return 4;
         }
         //if agent is still looking for a point or is travelling to a point, remain in roaming state
-        return typeof(RoamingState);
+        return 0;
     }
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {
-        base.stateExit(amalgamBrain);
+
     }
 
     public bool RandomPointOnNav(Vector3 centerPoint, float range, out Vector3 resultPoint)

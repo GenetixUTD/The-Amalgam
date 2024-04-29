@@ -7,7 +7,7 @@ using UnityEngine;
 public class AmalgamFSM : MonoBehaviour
 {
     public AmalgamCentralAI amalgamBrain;
-    private Dictionary<Type, EmptyState> amalgamStates;
+    public List<EmptyState> amalgamStates;
 
     public EmptyState currentState;
 
@@ -16,28 +16,34 @@ public class AmalgamFSM : MonoBehaviour
         //Fetch all Amalgam Commands
         amalgamBrain = GetComponent<AmalgamCentralAI>();
         //Start in Roaming State
-        currentState = amalgamStates.Values.First();
+        //Debug.Log("state start");
     }
 
     private void Update()
     {
+        if (currentState == null)
+        {
+            currentState = amalgamStates.First();
+            Debug.Log(currentState.GetType());
+            currentState.stateStart(amalgamBrain);
+        }
         //Run state's update and store output (output will be next state)
-        var temp = currentState.stateUpdate(amalgamBrain);
+        int temp = currentState.stateUpdate(amalgamBrain);
 
         //If the stored state is different -> switch states to new state
-        if (temp != currentState.GetType())
+        if (temp != amalgamStates.IndexOf(currentState))
         {
             switchStates(temp);
         }
     }
 
-    public void GrabAllStates(Dictionary<Type, EmptyState> states)
+    public void GrabAllStates(List<EmptyState> states)
     {
         //Fetch dictionary of all states
         amalgamStates = states;
     }
 
-    public void switchStates(Type state)
+    public void switchStates(int state)
     {
         //Run current state's exit, create reference to new state, run new state's start
         currentState.stateExit(amalgamBrain);

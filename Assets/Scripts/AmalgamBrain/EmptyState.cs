@@ -7,10 +7,10 @@ public class EmptyState : MonoBehaviour
 {
     public AmalgamCentralAI amalgamBrain;
 
-    public virtual void stateStart(AmalgamCentralAI amalgamBrain)
+    public virtual void stateStart(AmalgamCentralAI amalgamBrain)  
     {
-        amalgamBrain = this.GetComponent<AmalgamCentralAI>();
+        amalgamBrain = this.gameObject.GetComponent<AmalgamCentralAI>();
     }
-    public virtual Type stateUpdate(AmalgamCentralAI amalgamBrain) { return null; }
+    public virtual int stateUpdate(AmalgamCentralAI amalgamBrain) { return 0; }
     public virtual void stateExit(AmalgamCentralAI amalgamBrain) { }
 }

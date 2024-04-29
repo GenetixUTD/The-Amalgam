@@ -8,34 +8,35 @@ public class IdleState : EmptyState
 
     public bool idledEnough;
 
+    public IdleState()
+    {
+
+    }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
-        base.stateStart(amalgamBrain);
         idledEnough = false;
-        amalgamBrain.interuptedEvent = false;
         StartCoroutine(IdleTimer());
     }
 
-    public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
+    public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        base.stateUpdate(amalgamBrain);
-        if (idledEnough && !amalgamBrain.interuptedEvent)
+        if (idledEnough && amalgamBrain.interuptedEvent == null)
         {
-            return typeof(RoamingState);
+            return 0;
         }
-        else if(amalgamBrain.interuptedEvent)
+        else if(amalgamBrain.interuptedEvent != null)
         {
-            return typeof(HuntingState);
+            return 2;
         }
         else
         {
-            return typeof(IdleState);
+            return 4;
         }
     }
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {
-        base.stateExit(amalgamBrain);
+
     }
 
     public IEnumerator IdleTimer()

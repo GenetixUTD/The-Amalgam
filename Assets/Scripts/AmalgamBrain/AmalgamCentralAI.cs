@@ -1,31 +1,48 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.AI;
+using System.Linq;
 
 public class AmalgamCentralAI : MonoBehaviour
 {
     private float stunHealth;
 
-    private float movementSpeed;
-    private float rotationSpeed;
-
     public bool playerInSight;
 
-    public bool interuptedEvent;
+    public Transform interuptedEvent;
 
-    private Vector3 targetLocation;
-    public GameObject navMeshCenter;
-
-    private NavMeshAgent movementAgent;
     public GameObject playerTracker;
-    public Transform movementGoal;
 
     public Transform[] leavingAreas;
 
+    private int tensionMeter;
+
+    public AmalgamFSM FSMLogic;
+
+    [SerializeField]
+    public List<EmptyState> states;
+
+    
+
+
     private void Start()
     {
-        interuptedEvent = false;
+        interuptedEvent = null;
+        FSMLogic = GetComponent<AmalgamFSM>();
+        /*states = new Dictionary<Type, EmptyState>()
+        {
+            {typeof(RoamingState), new RoamingState() },
+            {typeof(IdleState), new IdleState() },
+            {typeof(StalkingState), new StalkingState() },
+            {typeof(HuntingState), new HuntingState() },
+            {typeof(HauntingState), new HauntingState() },
+            {typeof(LeavingState), new LeavingState() }
+        };*/
+        Debug.Log(states.ToList());
+        FSMLogic.GrabAllStates(states);
     }
 
     private void Update()

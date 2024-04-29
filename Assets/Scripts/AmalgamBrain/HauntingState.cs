@@ -13,10 +13,14 @@ public class HauntingState : EmptyState
 
     private NavMeshAgent agent;
 
+    public HauntingState()
+    {
+
+    }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
-        base.stateStart(amalgamBrain);
+
         lockerTracker = amalgamBrain.playerTracker.GetComponent<charactercontroller>().hidingLocker.GetComponent<Locker>();
         centerPoint = lockerTracker.ExitArea;
         SearchRange = 3f;
@@ -24,9 +28,9 @@ public class HauntingState : EmptyState
         pointFound = false;
     }
 
-    public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
+    public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        base.stateUpdate(amalgamBrain);
+
 
         if (!pointFound)
         {
@@ -44,13 +48,13 @@ public class HauntingState : EmptyState
         }
         else if (lockerTracker.minigameComplete)
         {
-            return typeof(LeavingState);
+            return 3;
         }
         else if(lockerTracker.minigameFailed)
         {
-            return typeof(StalkingState);
+            return 5;
         }
-        return typeof(HauntingState);
+        return 1;
     }
 
     public bool RandomPointNearHide(Vector3 centerPoint, float range, out Vector3 resultPoint)

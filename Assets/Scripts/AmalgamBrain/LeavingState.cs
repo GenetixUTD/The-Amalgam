@@ -8,26 +8,31 @@ public class LeavingState : EmptyState
 {
     public NavMeshAgent agent;
 
+    public LeavingState()
+    {
+
+    }
+
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
-        base.stateStart(amalgamBrain);
+
         agent = GetComponent<NavMeshAgent>();
     }
 
-    public override Type stateUpdate(AmalgamCentralAI amalgamBrain)
+    public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        base.stateUpdate(amalgamBrain);
+
         agent.SetDestination(findClosestExit(amalgamBrain.leavingAreas).position);
         if(amalgamBrain.interuptedEvent)
         {
-            return typeof(HuntingState);
+            return 2;
         }
-        return typeof(LeavingState);
+        return 3;
     }
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {
-        base.stateExit(amalgamBrain);
+
     }
 
     public Transform findClosestExit(Transform[] exits)
