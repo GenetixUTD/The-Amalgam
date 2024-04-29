@@ -22,12 +22,12 @@ public class HuntingState : EmptyState
     {
 
         agent.SetDestination(amalgamBrain.interuptedEvent.position);
-        if(agent.remainingDistance < 5f)
+        if(agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.position))
         {
             return 4;
         }
         else if(amalgamBrain.playerInSight)
-        {
+        { 
             return 5;
         }
         else
@@ -38,6 +38,6 @@ public class HuntingState : EmptyState
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {
-
+        amalgamBrain.interuptedEvent = null;
     }
 }

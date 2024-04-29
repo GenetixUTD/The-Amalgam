@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 
 public class RoamingState : EmptyState
 {
@@ -26,10 +27,19 @@ public class RoamingState : EmptyState
         centerPoint = amalgamBrain.gameObject.transform;
         agent = amalgamBrain.gameObject.GetComponent<NavMeshAgent>();
         pointFound = false;
+        Debug.Log(Vector3.Distance(this.transform.position, amalgamBrain.playerTracker.transform.position));
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
+        if (amalgamBrain.playerInSight)
+        {
+            return 5;
+        }
+        else if (amalgamBrain.interuptedEvent != null)
+        {
+            return 2;
+        }
         if(!pointFound)
         {
             //Find suitable Roam Position

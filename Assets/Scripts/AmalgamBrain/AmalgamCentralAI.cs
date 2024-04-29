@@ -53,8 +53,10 @@ public class AmalgamCentralAI : MonoBehaviour
     private void trackPlayerVisability()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, playerTracker.transform.position, out hit, Mathf.Infinity))
+        Vector3 dir = -this.transform.position + playerTracker.transform.position; 
+        if (Physics.Raycast(transform.position, dir * 10, out hit, 1000.0f))
         {
+            Debug.Log(hit.transform.tag);
             if(hit.transform.tag == "Player")
             {
                 playerInSight = true;
