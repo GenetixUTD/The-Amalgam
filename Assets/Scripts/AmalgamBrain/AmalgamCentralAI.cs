@@ -48,6 +48,16 @@ public class AmalgamCentralAI : MonoBehaviour
     private void Update()
     {
         trackPlayerVisability();
+
+        if(playerTracker.GetComponent<charactercontroller>().ActiveState == charactercontroller.PlayerState.Paused)
+        {
+            gameObject.GetComponent<NavMeshAgent>().SetDestination(this.transform.position);
+            gameObject.GetComponent<AmalgamFSM>().enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<AmalgamFSM>().enabled = true;
+        }
     }
 
     private void trackPlayerVisability()
