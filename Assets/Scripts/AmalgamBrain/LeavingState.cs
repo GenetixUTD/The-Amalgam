@@ -27,6 +27,10 @@ public class LeavingState : EmptyState
         {
             return 2;
         }
+        else if(amalgamBrain.playerInSight)
+        {
+            return 5;
+        }
         return 3;
     }
 

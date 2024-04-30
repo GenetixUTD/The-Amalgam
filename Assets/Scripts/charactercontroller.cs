@@ -73,6 +73,11 @@ public class charactercontroller : MonoBehaviour
             PlayerGun.gameObject.SetActive(false);
             MovePlayerCamera();
         }
+        else if(ActiveState == PlayerState.HidingGame)
+        {
+            PlayerGun.gameObject.SetActive(false);
+            MovePlayerCamera();
+        }
         else if(ActiveState == PlayerState.Paused)
         {
             PlayerGun.gameObject.SetActive(false);

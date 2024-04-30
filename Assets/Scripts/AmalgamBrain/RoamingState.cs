@@ -21,7 +21,7 @@ public class RoamingState : EmptyState
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
         //Define search range
-        SearchRange = 100f;
+        SearchRange = 500f;
         //Amalgam serves as the center of the search area
         //Debug.Log("fetching center point");
         centerPoint = amalgamBrain.gameObject.transform;
@@ -40,6 +40,11 @@ public class RoamingState : EmptyState
         {
             return 2;
         }
+        else if(amalgamBrain.playerDistance() < 75f && amalgamBrain.playerTracker.GetComponent<charactercontroller>().ActiveState == charactercontroller.PlayerState.HidingGame)
+        {
+            return 1;
+        }
+
         if(!pointFound)
         {
             //Find suitable Roam Position

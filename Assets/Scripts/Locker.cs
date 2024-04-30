@@ -75,7 +75,7 @@ public class Locker : Interactable
             hideTimer = 0;
             Debug.Log("Hiding");
             HidingInside = true;
-            PlayerCharacter.ActiveState = charactercontroller.PlayerState.Hiding;
+            PlayerCharacter.ActiveState = charactercontroller.PlayerState.HidingGame;
             PlayerCharacter.GetComponent<CharacterController>().enabled = false;
             PlayerCharacter.gameObject.transform.position = playerhideposition.position;
             PlayerCharacter.GetComponent<CharacterController>().enabled = true;

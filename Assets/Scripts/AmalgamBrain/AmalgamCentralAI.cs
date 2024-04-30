@@ -67,5 +67,10 @@ public class AmalgamCentralAI : MonoBehaviour
             }
         }
     }
+
+    public float playerDistance()
+    {
+        return Vector3.Distance(this.transform.position, playerTracker.transform.position);
+    }
     
 }
