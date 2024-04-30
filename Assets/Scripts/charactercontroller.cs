@@ -47,6 +47,10 @@ public class charactercontroller : MonoBehaviour
 
     public GameObject hidingLocker;
 
+    public AmalgamCentralAI amalgamReference;
+
+    public GameObject qtescript;
+
     private void Start()
     {
         Controller = GetComponent<CharacterController>();
@@ -76,6 +80,10 @@ public class charactercontroller : MonoBehaviour
         else if(ActiveState == PlayerState.HidingGame)
         {
             PlayerGun.gameObject.SetActive(false);
+            if(qtescript.GetComponent<QTEGame>().gameState == QTEGame.QTEState.Success)
+            {
+                ActiveState = PlayerState.Hiding;
+            }
             MovePlayerCamera();
         }
         else if(ActiveState == PlayerState.Paused)
@@ -176,7 +184,7 @@ public class charactercontroller : MonoBehaviour
                 }
                 
             }
-            if(hit.transform.gameObject.tag == "HideLocker")
+            if(hit.transform.gameObject.tag == "HideLocker" && !amalgamReference.playerInSight)
             {
                 hit.transform.gameObject.transform.GetComponentInParent<Locker>().EnableGlow();
                 previousLook = hit.transform.gameObject;
@@ -228,5 +236,16 @@ public class charactercontroller : MonoBehaviour
             Cursor.visible = true;
             this.ActiveState = PlayerState.Paused;
         }
+    }
+
+    public void EnableQTE()
+    {
+        Debug.Log("Enabling QTE");
+        qtescript.GetComponent<QTEGame>().gameStart();
+    }
+
+    public void DisableQTE() 
+    {
+        qtescript.GetComponent<QTEGame>().gameStop();
     }
 }

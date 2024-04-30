@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using TMPro;
 using UnityEngine;
 
 public class Locker : Interactable
@@ -13,7 +14,7 @@ public class Locker : Interactable
     public GameObject RegisterArea;
     public Transform ExitArea;
 
-    private GameObject Player;
+    [SerializeField] private GameObject Player;
 
     private float hideTimer;
 
@@ -21,23 +22,19 @@ public class Locker : Interactable
 
     private bool Activated;
 
-    public bool minigameOccuring;
-    public bool minigameComplete;
-    public bool minigameFailed;
-
     private void Start()
     {
         Activated = true;
         HidingInside = false;
-        minigameOccuring = false;
-        minigameComplete = false;
-        minigameFailed = false;
+
         hideTimer = 0.0f;
     }
 
     private void Update()
     {
-        if ((HidingInside && Input.GetKeyDown(KeyCode.E) && hideTimer > 0 )|| minigameFailed)
+        QTEGame.QTEState temp = Player.GetComponent<charactercontroller>().qtescript.GetComponent<QTEGame>().gameState;
+
+        if (((HidingInside && Input.GetKeyDown(KeyCode.E) && hideTimer > 0 ) && temp != QTEGame.QTEState.Undergoing)|| temp == QTEGame.QTEState.Failed)
         {
             Debug.Log("Unhiding");
             Player.GetComponent<CharacterController>().enabled = false;
@@ -47,11 +44,8 @@ public class Locker : Interactable
             Player.GetComponent<charactercontroller>().hidingLocker = null;
             Start();
             HidingInside = false;
-        }
-        if(minigameOccuring)
-        {
-
-        }
+        }        
+        
         hideTimer += Time.deltaTime;
     }
 
@@ -72,6 +66,7 @@ public class Locker : Interactable
         base.InteractedWith(PlayerCharacter);
         if (Activated)
         {
+
             hideTimer = 0;
             Debug.Log("Hiding");
             HidingInside = true;
@@ -81,18 +76,5 @@ public class Locker : Interactable
             PlayerCharacter.GetComponent<CharacterController>().enabled = true;
             Player = PlayerCharacter.gameObject;
         }
-    }
-
-    public IEnumerator PlayMinigame()
-    {
-        HeartbeatMinigame();
-        yield return new WaitForSeconds(15);
-    }
-
-    private void HeartbeatMinigame()
-    {
-        // minigame logic
-        // if successful -> minigameCompleted = true;
-        // if failure -> minigameFailed = true;
     }
 }

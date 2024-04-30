@@ -32,18 +32,7 @@ public class RoamingState : EmptyState
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        if (amalgamBrain.playerInSight)
-        {
-            return 5;
-        }
-        else if (amalgamBrain.interuptedEvent != null)
-        {
-            return 2;
-        }
-        else if(amalgamBrain.playerDistance() < 75f && amalgamBrain.playerTracker.GetComponent<charactercontroller>().ActiveState == charactercontroller.PlayerState.HidingGame)
-        {
-            return 1;
-        }
+        
 
         if(!pointFound)
         {
@@ -62,6 +51,19 @@ public class RoamingState : EmptyState
             //idle
             return 4;
         }
+
+        if (amalgamBrain.playerInSight)
+        {
+            return 5;
+        }
+        else if (amalgamBrain.interuptedEvent != null)
+        {
+            return 2;
+        }
+        else if (amalgamBrain.playerDistance() < 75f && amalgamBrain.playerTracker.GetComponent<charactercontroller>().ActiveState == charactercontroller.PlayerState.HidingGame)
+        {
+            return 1;
+        }
         //if agent is still looking for a point or is travelling to a point, remain in roaming state
         return 0;
     }
@@ -77,7 +79,7 @@ public class RoamingState : EmptyState
         Vector3 RandomSearchPoint = centerPoint + UnityEngine.Random.insideUnitSphere * range;
         NavMeshHit hit;
         // Can the amalgam travel to this point on the navmesh?
-        if (NavMesh.SamplePosition(RandomSearchPoint, out hit, 1.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(RandomSearchPoint, out hit, 5.0f, NavMesh.AllAreas))
         {
             //return that the amalgam has found a suitable position
             resultPoint = hit.position;
@@ -85,6 +87,7 @@ public class RoamingState : EmptyState
         }
         // if not remain still and continue searching on next update
         resultPoint = Vector3.zero;
+        Debug.Log("Not Accessible");
         return false;
 
     }

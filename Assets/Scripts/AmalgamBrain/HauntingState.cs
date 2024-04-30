@@ -23,7 +23,7 @@ public class HauntingState : EmptyState
 
         lockerTracker = amalgamBrain.playerTracker.GetComponent<charactercontroller>().hidingLocker.GetComponent<Locker>();
         centerPoint = lockerTracker.ExitArea;
-        SearchRange = 3f;
+        SearchRange = 30f;
         agent = GetComponent<NavMeshAgent>();
         pointFound = false;
     }
@@ -31,6 +31,7 @@ public class HauntingState : EmptyState
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
 
+        QTEGame.QTEState temp = amalgamBrain.playerTracker.GetComponent<charactercontroller>().qtescript.GetComponent<QTEGame>().gameState;
 
         if (!pointFound)
         {
@@ -42,15 +43,15 @@ public class HauntingState : EmptyState
                 pointFound = true;
             }
         }
-        else if (agent.remainingDistance <= agent.stoppingDistance && pointFound && !lockerTracker.minigameOccuring && !lockerTracker.minigameComplete)
+        else if (agent.remainingDistance <= agent.stoppingDistance && pointFound && temp == QTEGame.QTEState.Idle)
         {
-            lockerTracker.minigameOccuring = true;
+            amalgamBrain.playerTracker.GetComponent<charactercontroller>().EnableQTE();
         }
-        else if (lockerTracker.minigameComplete)
+        else if (temp == QTEGame.QTEState.Success)
         {
             return 3;
         }
-        else if(lockerTracker.minigameFailed)
+        else if(temp == QTEGame.QTEState.Failed || amalgamBrain.playerTracker.GetComponent<charactercontroller>().ActiveState == charactercontroller.PlayerState.Active)
         {
             return 5;
         }
