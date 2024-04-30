@@ -67,8 +67,11 @@ public class AmalgamCentralAI : MonoBehaviour
         if (Physics.Raycast(transform.position, dir * 10, out hit, 1000.0f))
         {
             Debug.Log(hit.transform.tag);
-            if(hit.transform.tag == "Player")
+            float temp = Vector3.Dot(dir.normalized, transform.forward);
+            temp = (Mathf.Acos(temp) * Mathf.Rad2Deg);
+            if(hit.transform.tag == "Player" && temp < 70)
             {
+                
                 playerInSight = true;
             }
             else

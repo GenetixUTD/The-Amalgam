@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: a2a54e7204d6a344b5eeabd765cbd031
     GuidInternal: 
-    m_lastTime: -8584919818474775808
-    List: []
+    m_lastTime: -8584871116154775808
+    List:
+    - name: main
+      guid: a8f02997fc0a3746bc52227b73226ca3
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a2a54e7204d6a344b5eeabd765cbd031
+      - ElementName: main
+        ObjectType: 7
+        guid: a8f02997fc0a3746bc52227b73226ca3
+      Path: SoundBanks\Default Work Unit\main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +94,42 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 26a2f3148f159d4db8a312a144f158c5
     GuidInternal: 
-    m_lastTime: -8584919818474775808
-    List: []
+    m_lastTime: -8584871116154775808
+    List:
+    - name: play_gunreloadevent
+      guid: 81006a33024b614a8f3bb5c1d72dd98b
+      id: 4209551473
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26a2f3148f159d4db8a312a144f158c5
+      - ElementName: play_gunreloadevent
+        ObjectType: 3
+        guid: 81006a33024b614a8f3bb5c1d72dd98b
+      Path: Events\Default Work Unit\play_gunreloadevent
+      maxAttenuation: 0
+      maxDuration: 3.222979
+      minDuration: 3.222979
+    - name: play_gunshotevent
+      guid: 3072a2dcec5f8845aad069262d03b6e3
+      id: 973796788
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26a2f3148f159d4db8a312a144f158c5
+      - ElementName: play_gunshotevent
+        ObjectType: 3
+        guid: 3072a2dcec5f8845aad069262d03b6e3
+      Path: Events\Default Work Unit\play_gunshotevent
+      maxAttenuation: 0
+      maxDuration: 2.0724168
+      minDuration: 2.0724168
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
