@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{379F36D5-DAB0-1CB9-C972-272CB02BDB66}">
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<Media>
+				<File Id="489942825" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>gunshot - Code Renard.wav</ShortName>
+					<CachePath>SFX/gunshot - Code Renard_10C4C929.wem</CachePath>
+				</File>
+				<File Id="675311816" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>gunreload - Code Renard.wav</ShortName>
+					<CachePath>SFX/gunreload - Code Renard_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4209551473" Name="play_gunreloadevent" DurationType="OneShot" DurationMin="3.222979" DurationMax="3.222979">
+					<MediaRefs>
+						<MediaRef Id="675311816"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="973796788" Name="play_gunshotevent" DurationType="OneShot" DurationMin="2.0724168" DurationMax="2.0724168">
+					<MediaRefs>
+						<MediaRef Id="489942825"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{F904D948-1421-95F2-DD03-CC586438B088}</FileHash>
+</SoundBanksInfo>

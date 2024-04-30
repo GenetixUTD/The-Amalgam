@@ -20,13 +20,13 @@ public class Gun : MonoBehaviour
 
 
 
-    public AudioClip ShootSound;
+/*    public AudioClip ShootSound;
     public AudioClip ClickSound;
-    public AudioClip ReloadSound;
+    public AudioClip ReloadSound;*/
 
     private bool isReloading = false;
 
-    private AudioSource AudioManager;
+/*    private AudioSource AudioManager;*/
 
     public ParticleSystem SmokeEffect;
     public ParticleSystem MuzzleFlash;
@@ -36,15 +36,18 @@ public class Gun : MonoBehaviour
 
     public TextMeshProUGUI PauseReserveCountText;
 
+    private float reloadAnimTimer;
+
     private void Start()
     {
-        AudioManager = GetComponent<AudioSource>();
+        /*AudioManager = GetComponent<AudioSource>();*/
         UpdateClipCount();
         UpdateReserveCount();
     }
 
     private void Update()
     {
+        reloadAnimTimer += Time.deltaTime;
         if(LastShot < FireRate)
         {
             LastShot += Time.deltaTime;
@@ -68,7 +71,7 @@ public class Gun : MonoBehaviour
             unADS();
         }
         
-        if(!AudioManager.isPlaying)
+        if(reloadAnimTimer > 2.767f)
         {
             isReloading = false;
         }
@@ -81,12 +84,13 @@ public class Gun : MonoBehaviour
             if (CurrentMag != 0 && LastShot >= FireRate)
             {
                 GunAnimator.SetTrigger("Shooting");
+                AkSoundEngine.PostEvent("play_gunshotevent", this.gameObject);
                 SmokeEffect.Play();
                 MuzzleFlash.Play();
                 Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
                 CurrentMag -= 1;
                 LastShot = 0;
-                AudioManager.PlayOneShot(ShootSound);
+                /*AudioManager.PlayOneShot(ShootSound);*/
             }
             else
             {
@@ -103,6 +107,7 @@ public class Gun : MonoBehaviour
             if (CurrentMag != MaxMagCount && CurrentReserves != 0)
             {
                 isReloading = true;
+                reloadAnimTimer = 0;
                 int temp = MaxMagCount - CurrentMag;
                 if (CurrentReserves >= temp)
                 {
@@ -150,6 +155,7 @@ public class Gun : MonoBehaviour
 
     public void ReloadSFX()
     {
-        AudioManager.PlayOneShot(ReloadSound);
+        /* AudioManager.PlayOneShot(ReloadSound);*/
+        AkSoundEngine.PostEvent("play_gunreloadevent", this.gameObject);
     }
 }

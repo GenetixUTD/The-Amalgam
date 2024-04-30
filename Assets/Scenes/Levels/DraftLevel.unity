@@ -35870,6 +35870,10 @@ PrefabInstance:
       propertyPath: amalgamReference
       value: 
       objectReference: {fileID: 2104595653}
+    - target: {fileID: 5162420126348933095, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: PauseReserveCountText
+      value: 
+      objectReference: {fileID: 1766768049}
     - target: {fileID: 5753313591837380372, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -39502,6 +39506,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76d2d3504ddb4847940a815cad04644, type: 3}
+--- !u!114 &1766768049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6922905810180074275, guid: 0ff9bac9f72f6e146af2a40920327a24, type: 3}
+  m_PrefabInstance: {fileID: 675353881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1767395176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 416390, guid: c76d2d3504ddb4847940a815cad04644, type: 3}

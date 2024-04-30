@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="play_gunreloadevent" ID="{336A0081-4B02-4A61-8F3B-B5C1D72DD98B}">
+					<ChildrenList>
+						<Action Name="" ID="{FB56207C-F788-42E5-A238-4025528A34DF}" ShortID="599356829">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="gunreload - Code Renard" ID="{772EFCE6-D26C-44A3-BA2C-CC4EE24796C6}" WorkUnitID="{50E62BA9-A866-4BD3-A723-37657FB3529B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_gunshotevent" ID="{DCA27230-5FEC-4588-AAD0-69262D03B6E3}">
+					<ChildrenList>
+						<Action Name="" ID="{55E66DF3-A577-4DC3-A0A7-8FE7F3F5F299}" ShortID="98876393">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="gunshot - Code Renard" ID="{4549DC7E-C2E6-428B-9A9F-FB38858335B7}" WorkUnitID="{50E62BA9-A866-4BD3-A723-37657FB3529B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

@@ -47,6 +47,10 @@ public class StalkingState : EmptyState
         {
             return 0;
         }
+        else if(!amalgamBrain.playerInSight && playerCRRunning && amalgamBrain.playerTracker.GetComponent<charactercontroller>().ActiveState == charactercontroller.PlayerState.HidingGame)
+        {
+            return 1;
+        }
         else
         {
             return 5;
