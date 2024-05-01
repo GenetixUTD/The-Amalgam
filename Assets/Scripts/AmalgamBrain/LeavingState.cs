@@ -22,7 +22,7 @@ public class LeavingState : EmptyState
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
 
-        agent.SetDestination(findClosestExit(amalgamBrain.leavingAreas).position);
+        agent.SetDestination(findClosestExit(amalgamBrain.currentAmalgamSpawns).position);
         if(amalgamBrain.interuptedEvent)
         {
             return 2;

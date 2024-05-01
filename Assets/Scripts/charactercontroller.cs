@@ -29,6 +29,8 @@ public class charactercontroller : MonoBehaviour
     [SerializeField] private float Sensitivity;
     private float Gravity = 9.81f;
 
+    public int currentFloor;
+
     public AudioSource WalkingSound;
     public AudioSource SprintingSound;
 
@@ -57,6 +59,7 @@ public class charactercontroller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         ActiveState = PlayerState.Active;
+        currentFloor = 2;
     }
 
     void Update()

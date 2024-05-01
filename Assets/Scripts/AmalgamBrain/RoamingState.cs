@@ -27,7 +27,6 @@ public class RoamingState : EmptyState
         centerPoint = amalgamBrain.gameObject.transform;
         agent = amalgamBrain.gameObject.GetComponent<NavMeshAgent>();
         pointFound = false;
-        Debug.Log(Vector3.Distance(this.transform.position, amalgamBrain.playerTracker.transform.position));
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
@@ -87,7 +86,7 @@ public class RoamingState : EmptyState
         }
         // if not remain still and continue searching on next update
         resultPoint = Vector3.zero;
-        Debug.Log("Not Accessible");
+        //Debug.Log("Not Accessible");
         return false;
 
     }

@@ -24,7 +24,6 @@ public class AmalgamFSM : MonoBehaviour
         if (currentState == null)
         {
             currentState = amalgamStates.First();
-            Debug.Log(currentState.GetType());
             currentState.stateStart(amalgamBrain);
         }
         //Run state's update and store output (output will be next state)
