@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -15,9 +16,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject SettingsButton;
     public GameObject InventoryButton;
 
+    public GameObject Transcriptions;
+
     public TMP_Dropdown ResolutionDropdown;
 
     private Resolution[] Resolutions;
+
+    public bool[] audioLogs;
+    [SerializeField] private GameObject[] audioLogsButtons;
 
     private void Start()
     {
@@ -50,6 +56,20 @@ public class PauseMenu : MonoBehaviour
         {
             Unpause();
         }
+
+        audioLogs = PlayerCharacter.unlockedLogs;
+        for (int i = 0; i < audioLogs.Length; i++) 
+        {
+            if (audioLogs[i])
+            {
+                audioLogsButtons[i].SetActive(true);
+            }
+            else
+            {
+                audioLogsButtons[i].SetActive(false);
+            }
+        }
+
     }
 
     public void Unpause()
@@ -100,5 +120,18 @@ public class PauseMenu : MonoBehaviour
         SettingsButton.SetActive(true);
         InventoryTabGroup.SetActive(true);
         InventoryButton.SetActive(false);
+    }
+
+    public void openTrascription(int index)
+    {
+        Transcriptions.transform.GetChild(index).gameObject.SetActive(true);
+    }
+
+    public void closeTranscriptions()
+    {
+        foreach(Transform child in Transcriptions.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
     }
 }

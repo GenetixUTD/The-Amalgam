@@ -7,6 +7,7 @@ TagManager:
   - Pickup
   - AmmoBox
   - HideLocker
+  - bullet
   layers:
   - Default
   - TransparentFX

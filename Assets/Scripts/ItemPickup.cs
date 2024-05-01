@@ -9,10 +9,12 @@ public class ItemPickup : Interactable
     {
         Ammo,
         Box,
-        Other
+        Other,
+        Log
     }
     public PickupType InteractableType;
     public int AmmoBoxSize;
+    public int AudioLogIndex;
 
     private void Start()
     {
@@ -38,6 +40,10 @@ public class ItemPickup : Interactable
             playergun.IncreaseReserves(AmmoBoxSize);
             Destroy(this.gameObject);
             playergun.UpdateReserveCount();
+        }
+        else if(InteractableType == PickupType.Log)
+        {
+            PlayerCharacter.unlockLog(AudioLogIndex);
         }
     }
 }

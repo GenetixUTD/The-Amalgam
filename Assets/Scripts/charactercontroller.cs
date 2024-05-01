@@ -34,6 +34,8 @@ public class charactercontroller : MonoBehaviour
     public bool WalkingSound;
     public bool SprintingSound;
 
+    [SerializeField] public bool[] unlockedLogs;
+
     private float InteractRange = 5.0f;
     private GameObject previousLook;
 
@@ -265,5 +267,10 @@ public class charactercontroller : MonoBehaviour
     public void DisableQTE() 
     {
         qtescript.GetComponent<QTEGame>().gameStop();
+    }
+
+    public void unlockLog(int logID)
+    {
+        unlockedLogs[logID] = true;
     }
 }
