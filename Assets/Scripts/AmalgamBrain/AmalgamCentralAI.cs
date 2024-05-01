@@ -77,7 +77,10 @@ public class AmalgamCentralAI : MonoBehaviour
         else if (stateTracker != charactercontroller.PlayerState.Paused && pauseTracker == true)
         {
             Debug.Log("unpause");
-            gameObject.GetComponent<AmalgamFSM>().enabled = true;
+            if (!tensionDecaying)
+            {
+                gameObject.GetComponent<AmalgamFSM>().enabled = true;
+            } 
             pauseTracker = false;
         }
         stateTracker = playerTracker.GetComponent<charactercontroller>().ActiveState;
