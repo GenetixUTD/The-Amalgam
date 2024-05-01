@@ -26,6 +26,7 @@ public class HauntingState : EmptyState
         SearchRange = 30f;
         agent = GetComponent<NavMeshAgent>();
         pointFound = false;
+        amalgamBrain.tensionMeter = 90;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)

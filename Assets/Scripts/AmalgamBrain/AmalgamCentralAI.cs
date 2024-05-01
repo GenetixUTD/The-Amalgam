@@ -24,7 +24,7 @@ public class AmalgamCentralAI : MonoBehaviour
 
     public Transform[] currentAmalgamSpawns; 
 
-    public int tensionMeter;
+    public float tensionMeter;
 
     private int randomIndex;
 
@@ -35,6 +35,8 @@ public class AmalgamCentralAI : MonoBehaviour
 
     private bool pauseTracker;
 
+    private float tensionDecayTimer;
+    private bool tensionDecaying;
 
     private charactercontroller.PlayerState stateTracker;
 
@@ -52,6 +54,7 @@ public class AmalgamCentralAI : MonoBehaviour
             {typeof(LeavingState), new LeavingState() }
         };*/
         tensionMeter = 0;
+        tensionDecayTimer = 0;
         Debug.Log(states.ToList());
         FSMLogic.GrabAllStates(states);
         //gameObject.GetComponent<AmalgamFSM>().enabled = false;
@@ -81,6 +84,22 @@ public class AmalgamCentralAI : MonoBehaviour
             Debug.Log("newspawn");
             currentAmalgamSpawns = fetchAmalgamSpawns();
             startAmalgam();
+        }
+
+        if((tensionMeter >= 100 && !this.GetComponent<AmalgamFSM>().enabled || tensionDecaying) && pauseTracker == false)
+        {
+            tensionDecaying = true;
+            tensionDecayTimer += Time.deltaTime;
+            if (tensionDecayTimer > 1)
+            {
+                tensionMeter -= UnityEngine.Random.Range(0f, 5f);
+                tensionDecayTimer = 0;
+            }
+            tensionMeter = Mathf.Clamp(tensionMeter, 0, 100);
+            if(tensionMeter == 0)
+            {
+                tensionDecaying = false;
+            }
         }
         
     }

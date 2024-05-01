@@ -17,7 +17,6 @@ public class LeavingState : EmptyState
     {
 
         agent = GetComponent<NavMeshAgent>();
-        amalgamBrain.tensionMeter = 100;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
