@@ -17,6 +17,7 @@ public class LeavingState : EmptyState
     {
 
         agent = GetComponent<NavMeshAgent>();
+        amalgamBrain.tensionMeter = 100;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
@@ -30,6 +31,10 @@ public class LeavingState : EmptyState
         else if(amalgamBrain.playerInSight)
         {
             return 5;
+        }
+        else if(agent.remainingDistance < 5)
+        {
+            amalgamBrain.stopAmalgam();
         }
         return 3;
     }

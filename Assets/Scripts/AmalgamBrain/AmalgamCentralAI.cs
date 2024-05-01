@@ -20,9 +20,11 @@ public class AmalgamCentralAI : MonoBehaviour
     public Transform[] level1eavingAreas;
     public Transform[] level0eavingAreas;
 
+    public Transform OffMap;
+
     public Transform[] currentAmalgamSpawns; 
 
-    private int tensionMeter;
+    public int tensionMeter;
 
     private int randomIndex;
 
@@ -112,6 +114,7 @@ public class AmalgamCentralAI : MonoBehaviour
     {
         this.transform.position = currentAmalgamSpawns[new System.Random().Next(0, currentAmalgamSpawns.Length)].position;
         this.gameObject.GetComponent<AmalgamFSM>().enabled = true;
+        this.GetComponent<NavMeshAgent>().enabled = true;
         this.gameObject.GetComponent<AmalgamFSM>().switchStates(0);
         return true;
     }
@@ -129,5 +132,12 @@ public class AmalgamCentralAI : MonoBehaviour
             default:
                 return new Transform[0];
         }
+    }
+
+    public void stopAmalgam()
+    {
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        this.GetComponent<AmalgamFSM>().enabled = false;
+        this.gameObject.transform.position = OffMap.position;
     }
 }

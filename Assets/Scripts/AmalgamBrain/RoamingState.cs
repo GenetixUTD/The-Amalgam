@@ -63,6 +63,10 @@ public class RoamingState : EmptyState
         {
             return 1;
         }
+        else if(amalgamBrain.tensionMeter >= 100)
+        {
+            return 3;
+        }
         //if agent is still looking for a point or is travelling to a point, remain in roaming state
         return 0;
     }
