@@ -44,6 +44,11 @@ public class StalkingState : EmptyState
             chasePlayer();
         }
 
+        if(amalgamBrain.playerDistance() < 5f)
+        {
+            amalgamBrain.PlayerDeath();
+        }
+
         if(playerLost)
         {
             return 0;
@@ -56,7 +61,8 @@ public class StalkingState : EmptyState
         {
             return 5;
         }
-    }
+
+}
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {

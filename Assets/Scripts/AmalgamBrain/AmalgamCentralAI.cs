@@ -20,6 +20,8 @@ public class AmalgamCentralAI : MonoBehaviour
     public Transform[] level1eavingAreas;
     public Transform[] level0eavingAreas;
 
+    public Transform playerRespawnLocation;
+
     public Transform OffMap;
 
     public Transform[] currentAmalgamSpawns; 
@@ -53,7 +55,7 @@ public class AmalgamCentralAI : MonoBehaviour
             {typeof(HauntingState), new HauntingState() },
             {typeof(LeavingState), new LeavingState() }
         };*/
-        tensionMeter = 0;
+        tensionMeter = 100;
         tensionDecayTimer = 0;
         Debug.Log(states.ToList());
         FSMLogic.GrabAllStates(states);
@@ -158,5 +160,14 @@ public class AmalgamCentralAI : MonoBehaviour
         this.GetComponent<NavMeshAgent>().enabled = false;
         this.GetComponent<AmalgamFSM>().enabled = false;
         this.gameObject.transform.position = OffMap.position;
+    }
+
+    public void PlayerDeath()
+    {
+        stopAmalgam();
+        tensionMeter = 100;
+        playerTracker.GetComponent<CharacterController>().enabled = false;
+        playerTracker.gameObject.transform.position = playerRespawnLocation.position;
+        playerTracker.GetComponent<CharacterController>().enabled = true;
     }
 }
