@@ -15,7 +15,7 @@ public class HauntingState : EmptyState
 
     public HauntingState()
     {
-
+        agent.speed = 12f;
     }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)

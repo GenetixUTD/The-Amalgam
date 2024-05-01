@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class IdleState : EmptyState
 {
@@ -10,7 +11,7 @@ public class IdleState : EmptyState
 
     public IdleState()
     {
-
+        GetComponent<NavMeshAgent>().speed = 12f;
     }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {

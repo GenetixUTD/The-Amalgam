@@ -16,7 +16,7 @@ public class RoamingState : EmptyState
 
     public RoamingState()
     {
-
+        agent.speed = 12f;
     }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {

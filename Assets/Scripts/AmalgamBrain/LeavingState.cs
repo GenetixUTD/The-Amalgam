@@ -10,7 +10,7 @@ public class LeavingState : EmptyState
 
     public LeavingState()
     {
-
+        agent.speed = 12f;
     }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)

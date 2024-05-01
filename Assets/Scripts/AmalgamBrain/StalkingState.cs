@@ -13,7 +13,7 @@ public class StalkingState : EmptyState
 
     public StalkingState()
     {
-
+        agent.speed = 15f;
     }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)

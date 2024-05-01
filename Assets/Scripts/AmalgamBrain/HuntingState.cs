@@ -10,7 +10,7 @@ public class HuntingState : EmptyState
 
     public HuntingState()
     {
-
+        agent.speed = 15f;
     }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
