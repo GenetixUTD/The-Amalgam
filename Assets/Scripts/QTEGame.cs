@@ -97,18 +97,19 @@ public class QTEGame : MonoBehaviour
     public void gameStop()
     {
         gameState = QTEState.Idle;
-        QTEItem.GetComponent<Image>().color = Color.green;
         QTEItem.SetActive(false);
         FButton.SetActive(false);
         EButton.SetActive(false);
-        QTESpawn = false;
         StopAllCoroutines();
     }
 
     IEnumerator gameWin()
     {
         yield return new WaitForSeconds(15f);
-        gameState = QTEState.Success;
+        gameState = QTEState.Success; 
+        QTEItem.SetActive(false);
+        FButton.SetActive(false);
+        EButton.SetActive(false);
     }
 
     IEnumerator QTEEvent()
