@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_GUNRELOADEVENT = 4209551473U;
         static const AkUniqueID PLAY_GUNSHOTEVENT = 973796788U;
+        static const AkUniqueID PLAY_PLAYERFOOTSTEPEVENT = 710259733U;
     } // namespace EVENTS
 
     namespace BANKS

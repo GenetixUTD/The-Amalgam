@@ -10,13 +10,14 @@ public class LeavingState : EmptyState
 
     public LeavingState()
     {
-        agent.speed = 12f;
+        
     }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
 
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = 12f;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)

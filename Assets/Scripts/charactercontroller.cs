@@ -31,8 +31,8 @@ public class charactercontroller : MonoBehaviour
 
     public int currentFloor;
 
-    public AudioSource WalkingSound;
-    public AudioSource SprintingSound;
+    public bool WalkingSound;
+    public bool SprintingSound;
 
     private float InteractRange = 5.0f;
     private GameObject previousLook;
@@ -46,6 +46,10 @@ public class charactercontroller : MonoBehaviour
 
     public float StandingHeight;
     public float CrouchingHeight;
+
+    public float walkingFootstepFrequency;
+    public float sprintingFootstepFrequency;
+    public float footstepCounter;
 
     public GameObject hidingLocker;
 
@@ -152,22 +156,33 @@ public class charactercontroller : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
+            float footstepFrequency;
 
             if (Input.GetKey(KeyCode.LeftShift) && !isCrouching)
             {
-                WalkingSound.enabled = false;
-                SprintingSound.enabled = true;
+                WalkingSound = false;
+                SprintingSound = true;
+                footstepFrequency = sprintingFootstepFrequency;
             }
             else
             {
-                WalkingSound.enabled = true;
-                SprintingSound.enabled = false;
+                WalkingSound = true;
+                SprintingSound = false;
+                footstepFrequency = walkingFootstepFrequency;
             }
+
+            if(footstepCounter >= 1f/footstepFrequency)
+            {
+                AkSoundEngine.PostEvent("play_playerfootstepevent", this.gameObject);
+                footstepCounter = 0;
+            }
+
+            footstepCounter += (SpeedActual * Time.deltaTime);
         }
         else
         {
-            WalkingSound.enabled = false;
-            SprintingSound.enabled = false;
+            WalkingSound = false;
+            SprintingSound = false;
         }
     }
 

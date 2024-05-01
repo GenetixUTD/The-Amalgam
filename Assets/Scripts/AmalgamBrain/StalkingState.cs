@@ -13,7 +13,7 @@ public class StalkingState : EmptyState
 
     public StalkingState()
     {
-        agent.speed = 15f;
+        
     }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)
@@ -24,6 +24,7 @@ public class StalkingState : EmptyState
         playerCRRunning = false;
         agent = gameObject.GetComponent<NavMeshAgent>();
         amalgamBrain.tensionMeter += 50;
+        agent.speed = 15f;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)

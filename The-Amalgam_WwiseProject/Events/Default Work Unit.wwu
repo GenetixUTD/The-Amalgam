@@ -25,6 +25,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="play_playerfootstepevent" ID="{53E189BC-4CF1-4677-844C-11EFC1F943CE}">
+					<ChildrenList>
+						<Action Name="" ID="{AE1B6FB2-E71E-4D71-ABC6-CBE26DF57604}" ShortID="345933225">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Metal Footsteps - Hush Angel" ID="{0C94E382-F09B-44A0-B6C5-C85BF87FECFE}" WorkUnitID="{50E62BA9-A866-4BD3-A723-37657FB3529B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

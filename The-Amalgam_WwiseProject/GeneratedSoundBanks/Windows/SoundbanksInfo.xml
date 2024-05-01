@@ -22,10 +22,18 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{379F36D5-DAB0-1CB9-C972-272CB02BDB66}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{FEA6EF58-B9AE-B21A-0258-525CB7AFC5E9}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
+				<File Id="250586051" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>metal footstep 5.wav</ShortName>
+					<CachePath>SFX/metal footstep 5_10C4C929.wem</CachePath>
+				</File>
+				<File Id="298127315" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>metal footstep 4.wav</ShortName>
+					<CachePath>SFX/metal footstep 4_10C4C929.wem</CachePath>
+				</File>
 				<File Id="489942825" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>gunshot - Code Renard.wav</ShortName>
 					<CachePath>SFX/gunshot - Code Renard_10C4C929.wem</CachePath>
@@ -33,6 +41,18 @@
 				<File Id="675311816" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>gunreload - Code Renard.wav</ShortName>
 					<CachePath>SFX/gunreload - Code Renard_10C4C929.wem</CachePath>
+				</File>
+				<File Id="706820271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>metal footstep 3.wav</ShortName>
+					<CachePath>SFX/metal footstep 3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="780632417" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>metal footstep 2.wav</ShortName>
+					<CachePath>SFX/metal footstep 2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="948940982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>metal footstep 1.wav</ShortName>
+					<CachePath>SFX/metal footstep 1_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -46,8 +66,17 @@
 						<MediaRef Id="489942825"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="710259733" Name="play_playerfootstepevent" DurationType="OneShot" DurationMin="0.21064584" DurationMax="0.25670832">
+					<MediaRefs>
+						<MediaRef Id="250586051"/>
+						<MediaRef Id="298127315"/>
+						<MediaRef Id="706820271"/>
+						<MediaRef Id="780632417"/>
+						<MediaRef Id="948940982"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F904D948-1421-95F2-DD03-CC586438B088}</FileHash>
+	<FileHash>{35DDCDED-3752-4B75-6377-7837179B858A}</FileHash>
 </SoundBanksInfo>

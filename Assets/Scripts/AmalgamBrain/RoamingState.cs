@@ -16,7 +16,7 @@ public class RoamingState : EmptyState
 
     public RoamingState()
     {
-        agent.speed = 12f;
+        
     }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
@@ -27,6 +27,7 @@ public class RoamingState : EmptyState
         centerPoint = amalgamBrain.gameObject.transform;
         agent = amalgamBrain.gameObject.GetComponent<NavMeshAgent>();
         pointFound = false;
+        agent.speed = 12f;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)

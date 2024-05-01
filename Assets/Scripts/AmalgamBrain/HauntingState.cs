@@ -15,7 +15,7 @@ public class HauntingState : EmptyState
 
     public HauntingState()
     {
-        agent.speed = 12f;
+        
     }
 
     public override void stateStart(AmalgamCentralAI amalgamBrain)
@@ -27,6 +27,7 @@ public class HauntingState : EmptyState
         agent = GetComponent<NavMeshAgent>();
         pointFound = false;
         amalgamBrain.tensionMeter = 90;
+        agent.speed = 12f;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)

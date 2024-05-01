@@ -11,12 +11,13 @@ public class IdleState : EmptyState
 
     public IdleState()
     {
-        GetComponent<NavMeshAgent>().speed = 12f;
+        
     }
     public override void stateStart(AmalgamCentralAI amalgamBrain)
     {
         idledEnough = false;
         StartCoroutine(IdleTimer());
+        GetComponent<NavMeshAgent>().speed = 12f;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
