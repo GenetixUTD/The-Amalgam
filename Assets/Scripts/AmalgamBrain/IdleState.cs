@@ -17,6 +17,8 @@ public class IdleState : EmptyState
     {
         idledEnough = false;
         StartCoroutine(IdleTimer());
+        amalgamBrain.footstepFrequency = amalgamBrain.walkingFootstepFrequency;
+        AkSoundEngine.SetSwitch("AmalgamFootsteps", "Walking", this.gameObject);
         GetComponent<NavMeshAgent>().speed = 12f;
     }
 

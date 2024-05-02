@@ -17,6 +17,8 @@ public class LeavingState : EmptyState
     {
 
         agent = GetComponent<NavMeshAgent>();
+        amalgamBrain.footstepFrequency = amalgamBrain.walkingFootstepFrequency;
+        AkSoundEngine.SetSwitch("AmalgamFootsteps", "Walking", this.gameObject);
         agent.speed = 12f;
     }
 

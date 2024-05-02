@@ -16,6 +16,8 @@ public class HuntingState : EmptyState
     {
 
         agent = GetComponent<NavMeshAgent>();
+        amalgamBrain.footstepFrequency = amalgamBrain.sprintingFootstepFrequency;
+        AkSoundEngine.SetSwitch("AmalgamFootsteps", "Sprinting", this.gameObject);
         agent.speed = 15f;
     }
 

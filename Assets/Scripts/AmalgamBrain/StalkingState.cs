@@ -24,6 +24,8 @@ public class StalkingState : EmptyState
         playerCRRunning = false;
         agent = gameObject.GetComponent<NavMeshAgent>();
         amalgamBrain.tensionMeter += 50;
+        amalgamBrain.footstepFrequency = amalgamBrain.sprintingFootstepFrequency;
+        AkSoundEngine.SetSwitch("AmalgamFootsteps", "Sprinting", this.gameObject);
         agent.speed = 15f;
     }
 

@@ -27,6 +27,8 @@ public class HauntingState : EmptyState
         agent = GetComponent<NavMeshAgent>();
         pointFound = false;
         amalgamBrain.tensionMeter = 90;
+        amalgamBrain.footstepFrequency = amalgamBrain.walkingFootstepFrequency;
+        AkSoundEngine.SetSwitch("AmalgamFootsteps", "Walking", this.gameObject);
         agent.speed = 12f;
     }
 

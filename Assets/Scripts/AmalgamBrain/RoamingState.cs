@@ -28,6 +28,8 @@ public class RoamingState : EmptyState
         centerPoint = amalgamBrain.gameObject.transform;
         agent = amalgamBrain.gameObject.GetComponent<NavMeshAgent>();
         pointFound = false;
+        amalgamBrain.footstepFrequency = amalgamBrain.walkingFootstepFrequency;
+        AkSoundEngine.SetSwitch("AmalgamFootsteps", "Walking", this.gameObject);
         agent.speed = 12f;
     }
 
@@ -53,7 +55,7 @@ public class RoamingState : EmptyState
             }
         }
         // if the agent is close enough to the random point
-        else if (agent.remainingDistance <= agent.stoppingDistance && pointFound)
+        else if (agent.remainingDistance <= 5 && pointFound)
         {
             //idle
             return 4;

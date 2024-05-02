@@ -21,18 +21,46 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<SwitchGroups>
+				<SwitchGroup Id="550163498" Name="AmalgamFootsteps">
+					<Switches>
+						<Switch Id="340271938" Name="Walking"/>
+						<Switch Id="3691594375" Name="Sprinting"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{FEA6EF58-B9AE-B21A-0258-525CB7AFC5E9}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7527E794-6EAC-66D7-D15A-58BCE99FB03D}">
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<Media>
+				<File Id="62028705" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_E188CB77.wem</CachePath>
+				</File>
+				<File Id="177335179" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_0EE5B6CF.wem</CachePath>
+				</File>
 				<File Id="250586051" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>metal footstep 5.wav</ShortName>
 					<CachePath>SFX/metal footstep 5_10C4C929.wem</CachePath>
 				</File>
+				<File Id="273768957" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_5D8963C6.wem</CachePath>
+				</File>
 				<File Id="298127315" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>metal footstep 4.wav</ShortName>
 					<CachePath>SFX/metal footstep 4_10C4C929.wem</CachePath>
+				</File>
+				<File Id="429441406" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_33DCF048.wem</CachePath>
+				</File>
+				<File Id="480726821" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_59347ECB.wem</CachePath>
 				</File>
 				<File Id="489942825" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>gunshot - Code Renard.wav</ShortName>
@@ -46,16 +74,60 @@
 					<ShortName>metal footstep 3.wav</ShortName>
 					<CachePath>SFX/metal footstep 3_10C4C929.wem</CachePath>
 				</File>
+				<File Id="720914620" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_C925A8B3.wem</CachePath>
+				</File>
+				<File Id="730420251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_792EB088.wem</CachePath>
+				</File>
 				<File Id="780632417" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>metal footstep 2.wav</ShortName>
 					<CachePath>SFX/metal footstep 2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="782657024" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_1A178E7E.wem</CachePath>
 				</File>
 				<File Id="948940982" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>metal footstep 1.wav</ShortName>
 					<CachePath>SFX/metal footstep 1_10C4C929.wem</CachePath>
 				</File>
+				<File Id="977492175" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_94073826.wem</CachePath>
+				</File>
+				<File Id="1040502630" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</ShortName>
+					<CachePath>SFX/zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_C750E53D.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="236868615" Name="play_amalgamfootstepsevent" MaxAttenuation="50" DurationType="OneShot" DurationMin="0.24758905" DurationMax="0.47413042">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="550163498" Id="3691594375"/>
+							<MediaRefs>
+								<MediaRef Id="62028705"/>
+								<MediaRef Id="273768957"/>
+								<MediaRef Id="429441406"/>
+								<MediaRef Id="480726821"/>
+								<MediaRef Id="1040502630"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="550163498" Id="340271938" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="177335179"/>
+								<MediaRef Id="720914620"/>
+								<MediaRef Id="730420251"/>
+								<MediaRef Id="782657024"/>
+								<MediaRef Id="977492175"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="4209551473" Name="play_gunreloadevent" DurationType="OneShot" DurationMin="3.222979" DurationMax="3.222979">
 					<MediaRefs>
 						<MediaRef Id="675311816"/>
@@ -76,7 +148,15 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="550163498" Name="AmalgamFootsteps">
+					<Switches>
+						<Switch Id="340271938" Name="Walking"/>
+						<Switch Id="3691594375" Name="Sprinting"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8E0933B4-B768-5559-766E-3A0E8F5B3780}</FileHash>
+	<FileHash>{EF933B83-F54A-74EB-4B5F-E692C347CF7D}</FileHash>
 </SoundBanksInfo>

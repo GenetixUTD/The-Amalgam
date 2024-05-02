@@ -43,6 +43,11 @@ public class AmalgamCentralAI : MonoBehaviour
     private float tensionDecayTimer;
     private bool tensionDecaying;
 
+    public float walkingFootstepFrequency;
+    public float sprintingFootstepFrequency;
+    public float footstepFrequency;
+    public float footstepCounter;
+
     private charactercontroller.PlayerState stateTracker;
 
     private void Start()
@@ -143,6 +148,18 @@ public class AmalgamCentralAI : MonoBehaviour
             this.GetComponent<AmalgamFSM>().enabled = true;
         }
         
+        if (footstepCounter >= 1f / footstepFrequency)
+        {
+            AkSoundEngine.PostEvent("play_amalgamfootstepsevent", this.gameObject);
+            footstepCounter = 0;
+        }
+
+        if(Vector3.Distance(this.GetComponent<NavMeshAgent>().velocity, new Vector3(0,0,0)) > 0)
+        {
+            footstepCounter += (this.GetComponent<NavMeshAgent>().speed * Time.deltaTime);
+        }
+        
+
     }
 
     private void trackPlayerVisability()

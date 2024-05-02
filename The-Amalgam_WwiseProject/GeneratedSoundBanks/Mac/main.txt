@@ -1,14 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
+	236868615	play_amalgamfootstepsevent			\Default Work Unit\play_amalgamfootstepsevent	
 	710259733	play_playerfootstepevent			\Default Work Unit\play_playerfootstepevent	
 	973796788	play_gunshotevent			\Default Work Unit\play_gunshotevent	
 	4209551473	play_gunreloadevent			\Default Work Unit\play_gunreloadevent	
 
+Switch Group	ID	Name			Wwise Object Path	Notes
+	550163498	AmalgamFootsteps			\Default Work Unit\AmalgamFootsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	340271938	Walking	AmalgamFootsteps			
+	3691594375	Sprinting	AmalgamFootsteps			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	62028705	sprinting4	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_E188CB77.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamSprinting\sprinting4		50460
+	177335179	walking4	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_0EE5B6CF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamWalking\walking4		83736
 	250586051	metal footstep 5	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\metal footstep 5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Metal Footsteps - Hush Angel\metal footstep 5		49384
+	273768957	sprinting5	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_5D8963C6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamSprinting\sprinting5		62728
 	298127315	metal footstep 4	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\metal footstep 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Metal Footsteps - Hush Angel\metal footstep 4		43696
+	429441406	sprinting1	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_33DCF048.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamSprinting\sprinting1		60288
+	480726821	sprinting2	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_59347ECB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamSprinting\sprinting2		64592
 	489942825	gunshot - Code Renard	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\gunshot - Code Renard_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\gunshot - Code Renard		398000
 	675311816	gunreload - Code Renard	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\gunreload - Code Renard_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\gunreload - Code Renard		618908
 	706820271	metal footstep 3	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\metal footstep 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Metal Footsteps - Hush Angel\metal footstep 3		40540
+	720914620	walking5	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_C925A8B3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamWalking\walking5		58932
+	730420251	walking3	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_792EB088.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamWalking\walking3		85904
 	780632417	metal footstep 2	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\metal footstep 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Metal Footsteps - Hush Angel\metal footstep 2		43064
+	782657024	walking2	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_1A178E7E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamWalking\walking2		86016
 	948940982	metal footstep 1	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\metal footstep 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Metal Footsteps - Hush Angel\metal footstep 1		40540
+	977492175	walking1	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452_94073826.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamWalking\walking1		74944
+	1040502630	sprinting3	F:\Uni Work\IMAT3451 - Final Year Project\Github\The-Amalgam\The-Amalgam_WwiseProject\.cache\Mac\SFX\zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450_C750E53D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amalgam Footsteps\AmalgamSprinting\sprinting3		67248
 
