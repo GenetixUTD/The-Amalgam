@@ -28,6 +28,7 @@ public class Locker : Interactable
         HidingInside = false;
 
         hideTimer = 0.0f;
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()

@@ -22,9 +22,10 @@ public class HuntingState : EmptyState
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
 
-        agent.SetDestination(amalgamBrain.interuptedEvent.position);
-        if(agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.position))
+        agent.SetDestination(amalgamBrain.interuptedEvent.transform.position);
+        if(agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.transform.position))
         {
+            amalgamBrain.interuptedEvent.SetActive(false);
             return 4;
         }
         else if(amalgamBrain.playerInSight)

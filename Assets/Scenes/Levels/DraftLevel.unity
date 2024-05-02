@@ -10950,7 +10950,7 @@ PrefabInstance:
     - target: {fileID: 151363288086565855, guid: 94af8431cc3f56b4c80496f47e9c32da, type: 3}
       propertyPath: interuptedEvent
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1312442187}
     - target: {fileID: 151363288086565855, guid: 94af8431cc3f56b4c80496f47e9c32da, type: 3}
       propertyPath: states.Array.size
       value: 6
@@ -11025,7 +11025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3699431236573671887, guid: 94af8431cc3f56b4c80496f47e9c32da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4888946107125842225, guid: 94af8431cc3f56b4c80496f47e9c32da, type: 3}
       propertyPath: m_RootOrder
@@ -54953,6 +54953,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76d2d3504ddb4847940a815cad04644, type: 3}
+--- !u!1 &1312442187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312442188}
+  m_Layer: 0
+  m_Name: AmalgamHint
+  m_TagString: hint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1312442188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312442187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.094164, y: 5.8951497, z: -7.78253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1312962076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67518,6 +67549,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1003184083600390522, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: PauseMenu
       value: 
@@ -67526,6 +67561,10 @@ PrefabInstance:
       propertyPath: qtescript
       value: 
       objectReference: {fileID: 140508763}
+    - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: amalgamHint
+      value: 
+      objectReference: {fileID: 1312442187}
     - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: amalgamReference
       value: 
@@ -67540,7 +67579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: unlockedFloors.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: sprintingFootstepFrequency
@@ -67548,8 +67587,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: unlockedFloors.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228176930721271978, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: unlockedFloors.Array.data[3]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5162420126348933095, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 929415084}
     - target: {fileID: 5162420126348933095, guid: 27d60481a09ce944890dd3999e9e41fb, type: 3}
       propertyPath: ClipCountText
       value: 

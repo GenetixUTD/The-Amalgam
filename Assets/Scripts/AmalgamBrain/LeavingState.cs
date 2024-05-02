@@ -24,7 +24,7 @@ public class LeavingState : EmptyState
     {
 
         agent.SetDestination(findClosestExit(amalgamBrain.currentAmalgamSpawns).position);
-        if(amalgamBrain.interuptedEvent)
+        if(amalgamBrain.interuptedEvent != null)
         {
             return 2;
         }

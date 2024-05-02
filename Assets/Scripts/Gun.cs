@@ -38,6 +38,8 @@ public class Gun : MonoBehaviour
 
     private float reloadAnimTimer;
 
+    public charactercontroller player; 
+
     private void Start()
     {
         /*AudioManager = GetComponent<AudioSource>();*/
@@ -90,6 +92,7 @@ public class Gun : MonoBehaviour
                 Instantiate(BulletPrefab, MuzzlePosition.position, this.gameObject.transform.rotation);
                 CurrentMag -= 1;
                 LastShot = 0;
+                player.updateAmalgamHint();
                 /*AudioManager.PlayOneShot(ShootSound);*/
             }
             else

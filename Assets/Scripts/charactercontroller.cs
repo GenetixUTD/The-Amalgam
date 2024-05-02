@@ -34,6 +34,8 @@ public class charactercontroller : MonoBehaviour
     public bool WalkingSound;
     public bool SprintingSound;
 
+    public GameObject amalgamHint;
+
     [SerializeField] public bool[] unlockedLogs;
 
     [SerializeField] public bool[] unlockedFloors;
@@ -167,6 +169,7 @@ public class charactercontroller : MonoBehaviour
                 WalkingSound = false;
                 SprintingSound = true;
                 footstepFrequency = sprintingFootstepFrequency;
+                updateAmalgamHint();
             }
             else
             {
@@ -279,5 +282,11 @@ public class charactercontroller : MonoBehaviour
     public void unlockFloor(int floorID)
     {
         unlockedFloors[floorID] = true;
+    }
+
+    public void updateAmalgamHint()
+    {
+        amalgamHint.transform.position = this.transform.position;
+        amalgamHint.SetActive(true);
     }
 }

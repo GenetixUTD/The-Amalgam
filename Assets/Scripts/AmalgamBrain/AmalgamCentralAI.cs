@@ -12,7 +12,7 @@ public class AmalgamCentralAI : MonoBehaviour
 
     public bool playerInSight;
 
-    public Transform interuptedEvent;
+    public GameObject interuptedEvent;
 
     public GameObject playerTracker;
 
@@ -65,7 +65,8 @@ public class AmalgamCentralAI : MonoBehaviour
     private void Update()
     {
         trackPlayerVisability();
-        
+
+        interuptedEvent = GameObject.FindWithTag("hint");
 
         if (stateTracker == charactercontroller.PlayerState.Paused)
         {
