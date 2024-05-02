@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static charactercontroller;
 
 public class ItemPickup : Interactable
 {
@@ -11,12 +12,14 @@ public class ItemPickup : Interactable
         Box,
         Other,
         Log,
-        Keycard
+        Keycard,
+        Monitor
     }
     public PickupType InteractableType;
     public int AmmoBoxSize;
     public int AudioLogIndex;
     public int keycardFloor;
+    public GameObject monitor;
 
     private void Start()
     {
@@ -52,6 +55,13 @@ public class ItemPickup : Interactable
         {
             PlayerCharacter.unlockFloor(keycardFloor);
             Destroy(this.gameObject);
+        }
+        else if(InteractableType == PickupType.Monitor)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            PlayerCharacter.ActiveState = PlayerState.Paused;
+            monitor.SetActive(true);
         }
     }
 }

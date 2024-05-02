@@ -61,6 +61,10 @@ public class Elevator : MonoBehaviour
         {
             inMotion = false;
         }
+        else
+        {
+            targetFloor = playerActual.GetComponent<charactercontroller>().currentFloor;
+        }
 
 
         if(inMotion)
@@ -97,6 +101,7 @@ public class Elevator : MonoBehaviour
             playerActual.GetComponent<charactercontroller>().currentFloor = -1;
             transform.position = new Vector3(0, floorsub1y, 0);
             inMotion = false;
+            this.enabled = false;
         }
     }
 
