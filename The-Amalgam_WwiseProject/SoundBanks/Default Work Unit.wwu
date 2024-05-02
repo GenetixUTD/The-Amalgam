@@ -8,6 +8,7 @@
 						<ObjectRef Name="play_gunshotevent" ID="{DCA27230-5FEC-4588-AAD0-69262D03B6E3}" WorkUnitID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="play_playerfootstepevent" ID="{53E189BC-4CF1-4677-844C-11EFC1F943CE}" WorkUnitID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="play_gunreloadevent" ID="{336A0081-4B02-4A61-8F3B-B5C1D72DD98B}" WorkUnitID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_amalgamfootstepsevent" ID="{A4432DE8-7C63-4C0F-A398-3DBF80DB7489}" WorkUnitID="{14F3A226-158F-4D9D-B8A3-12A144F158C5}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

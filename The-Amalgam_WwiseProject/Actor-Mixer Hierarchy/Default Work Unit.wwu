@@ -183,6 +183,415 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<SwitchContainer Name="Amalgam Footsteps" ID="{5F6AA20E-EEF3-494F-9868-1E44765168FA}" ShortID="641234748">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="enemyfootstepsattn" ID="{9400F4A1-F78B-4CD8-BDC0-E234991F9E96}" WorkUnitID="{CB09C095-2810-48F9-8992-79975EBD5DAA}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Walking" ID="{7866C560-4B73-4A45-9A6A-2810E164358B}" WorkUnitID="{14CAAB39-AAD0-446C-A9EE-4F35BED871FF}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="AmalgamFootsteps" ID="{13AABF6C-1937-4EAD-893C-F77C56AD9F9F}" WorkUnitID="{14CAAB39-AAD0-446C-A9EE-4F35BED871FF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="AmalgamWalking" ID="{CE71B586-CFD6-4C8B-AC1E-B7AEF2A6B119}" ShortID="794769770">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A3140F4F-B8F4-48DC-99B8-C22900AEAE52}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="walking1" ID="{18D050FE-1036-4901-8C1C-3A5621B1B81C}" ShortID="514038131">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{13795F02-E4ED-4F8A-AF7F-11C06C33CCEE}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.165604853727347"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.555434819732346"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="977492175"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{13795F02-E4ED-4F8A-AF7F-11C06C33CCEE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="walking2" ID="{BE40CCE4-B01B-4AB2-A0D9-A0D1E3FCFF72}" ShortID="277121843">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{FE073051-38FA-4795-A53F-4A68B5F699CB}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.860262013495661"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.30778152988486"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="782657024"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{FE073051-38FA-4795-A53F-4A68B5F699CB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="walking3" ID="{ECA341A1-3DE9-4627-822C-2FA5D9EFEF16}" ShortID="255749180">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{727B615D-328F-4A34-B55B-042DAE4BA3D3}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.61318587654375"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.06010026368703"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="730420251"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{727B615D-328F-4A34-B55B-042DAE4BA3D3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="walking4" ID="{2C692C2B-FB72-4B14-A82A-3BDD91577A1D}" ShortID="224798872">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{35C355A2-EBCD-4B37-852D-8F60BE2F7FEA}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.39796911478792"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.8336012903042"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="177335179"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{35C355A2-EBCD-4B37-852D-8F60BE2F7FEA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="walking5" ID="{613A8D60-92A3-43A6-8EEF-6F5D98FE5E4D}" ShortID="243630105">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{D853B305-2359-4F5A-9B03-98FD721552D6}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.87205335965464"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.17850170928868"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="720914620"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_slow_on_metal_roof_or_surface_77452" ID="{D853B305-2359-4F5A-9B03-98FD721552D6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="AmalgamSprinting" ID="{8948BE90-6980-49CB-9F16-C656EDF009B3}" ShortID="223744051">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{201BB49D-D9A1-4BFA-8A4A-661E77B2A1A5}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sprinting1" ID="{E5798CC5-4821-4915-834C-18932385280F}" ShortID="415644078">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{B858AF4B-2513-4222-AC75-95A195814CDF}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0280923435139399"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.341592238796155"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="429441406"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{B858AF4B-2513-4222-AC75-95A195814CDF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sprinting2" ID="{0A84DF28-77DE-4F65-9F9D-D06930E4AB83}" ShortID="346502544">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{035AE3E5-A632-4DC8-9BE2-AA57C75FC986}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.667602150671439"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.00353142680476"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="480726821"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{035AE3E5-A632-4DC8-9BE2-AA57C75FC986}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sprinting3" ID="{408325A4-7234-476A-AFE3-58EF610E5FD5}" ShortID="950039969">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{5E62A005-83D1-4200-A80E-B13B82FF1AD7}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.01370759550659"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.36345625555053"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1040502630"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{5E62A005-83D1-4200-A80E-B13B82FF1AD7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sprinting4" ID="{5141EE75-E185-4A3C-80D1-D26D9C2E51CE}" ShortID="776485834">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{7C6F1A43-1425-464A-A40F-8586ABCCDAEA}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.73142099163842"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.99373248667138"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="62028705"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{7C6F1A43-1425-464A-A40F-8586ABCCDAEA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sprinting5" ID="{787A8BCB-793B-4DE9-94CD-8EA3BFCD9622}" ShortID="784823294">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{631613FB-1713-4E60-84F8-C35086E1D53E}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{292DD42C-3285-493B-87D9-881E3C700AD6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{2FC2027A-96AE-464F-9C2E-95FEB4BD4E3A}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.42352258485246"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.74973607464761"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="273768957"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="zapsplat_foley_claws_walking_fast_or_running_on_metal_roof_or_surface_77450" ID="{2FC2027A-96AE-464F-9C2E-95FEB4BD4E3A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="AmalgamWalking" ID="{CE71B586-CFD6-4C8B-AC1E-B7AEF2A6B119}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="AmalgamSprinting" ID="{8948BE90-6980-49CB-9F16-C656EDF009B3}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Sprinting" ID="{DBEE1A07-909B-4393-838F-7D444922324C}"/>
+								<ItemList>
+									<ItemRef Name="AmalgamSprinting" ID="{8948BE90-6980-49CB-9F16-C656EDF009B3}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Walking" ID="{7866C560-4B73-4A45-9A6A-2810E164358B}"/>
+								<ItemList>
+									<ItemRef Name="AmalgamWalking" ID="{CE71B586-CFD6-4C8B-AC1E-B7AEF2A6B119}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

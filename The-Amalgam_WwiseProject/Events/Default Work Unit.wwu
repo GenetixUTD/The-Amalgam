@@ -36,6 +36,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="play_amalgamfootstepsevent" ID="{A4432DE8-7C63-4C0F-A398-3DBF80DB7489}">
+					<ChildrenList>
+						<Action Name="" ID="{93EB1B36-015B-42FC-9EA3-D9AB483AF9A4}" ShortID="589108058">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Amalgam Footsteps" ID="{5F6AA20E-EEF3-494F-9868-1E44765168FA}" WorkUnitID="{50E62BA9-A866-4BD3-A723-37657FB3529B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
