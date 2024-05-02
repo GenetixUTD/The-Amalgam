@@ -36,7 +36,7 @@ public class Elevator : MonoBehaviour
     }
     private void Update()
     {
-        if(targetFloor != playerActual.GetComponent<charactercontroller>().currentFloor)
+        if(targetFloor != playerActual.GetComponent<charactercontroller>().currentFloor && verifyPlayerAuth(targetFloor))
         {
             inMotion = true;
             float temp = -50;
@@ -139,4 +139,8 @@ public class Elevator : MonoBehaviour
         DoorR.GetComponent<Animator>().SetBool("open", false);
     }
 
+    public bool verifyPlayerAuth(int floor)
+    {
+        return playerActual.GetComponent<charactercontroller>().unlockedFloors[floor + 1];
+    }
 }
