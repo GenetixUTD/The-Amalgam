@@ -126,11 +126,13 @@ public class charactercontroller : MonoBehaviour
 
         if(Input.GetKey(KeyCode.LeftControl))
         {
+            
             Controller.height = CrouchingHeight;
             isCrouching = true;
         }
-        else
+        else if(Input.GetKeyUp(KeyCode.LeftControl))
         {
+            this.transform.position = new Vector3(transform.position.x, transform.position.y + (StandingHeight - CrouchingHeight), transform.position.z);
             Controller.height = StandingHeight;
             isCrouching = false;
         }
