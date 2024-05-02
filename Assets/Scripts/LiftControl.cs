@@ -16,10 +16,12 @@ public class LiftControl : MonoBehaviour
 
     public string subFloorPasscode;
 
+    public GameObject roofButton;
+
     private void Start()
     {
         PlayerCharacter = GameObject.FindWithTag("Player").GetComponent<charactercontroller>();
-        subFloorPasscode = "274";
+        subFloorPasscode = "Kingston";
     }
 
     public void buttonPressAttemptMove(int Floor)
@@ -38,10 +40,20 @@ public class LiftControl : MonoBehaviour
         {
 
         }
+        
+        if(Floor == 3)
+        {
+            roofButtonPressed();
+        }
     }
 
     private void Update()
     {
+        if(PlayerCharacter.storyResearchGathered)
+        {
+            roofButton.SetActive(true);
+        }
+
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             closeWindow();
@@ -54,6 +66,11 @@ public class LiftControl : MonoBehaviour
                 thisElevator.targetFloor = -1;
                 closeWindow();
             }
+            else
+            {
+                PasscodeEntryField.text = "";
+                closeWindow();
+            }
         }
     }
 
@@ -63,5 +80,10 @@ public class LiftControl : MonoBehaviour
         PasscodePanel.SetActive(false);
         floorButtonPanel.SetActive(true);
         this.gameObject.SetActive(false);
+    }
+
+    public void roofButtonPressed()
+    {
+        PlayerCharacter.badEnding();
     }
 }

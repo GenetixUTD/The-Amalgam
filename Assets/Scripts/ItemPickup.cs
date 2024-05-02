@@ -13,7 +13,8 @@ public class ItemPickup : Interactable
         Other,
         Log,
         Keycard,
-        Monitor
+        Monitor,
+        Research
     }
     public PickupType InteractableType;
     public int AmmoBoxSize;
@@ -62,6 +63,11 @@ public class ItemPickup : Interactable
             Cursor.visible = true;
             PlayerCharacter.ActiveState = PlayerState.Paused;
             monitor.SetActive(true);
+        }
+        else if(InteractableType == PickupType.Research)
+        {
+            PlayerCharacter.storyResearchGathered = true;
+            this.gameObject.SetActive(false);
         }
     }
 }

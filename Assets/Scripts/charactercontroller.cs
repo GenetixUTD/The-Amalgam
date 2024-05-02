@@ -63,6 +63,8 @@ public class charactercontroller : MonoBehaviour
 
     public GameObject qtescript;
 
+    public bool storyResearchGathered;
+
     private void Start()
     {
         Controller = GetComponent<CharacterController>();
@@ -70,6 +72,7 @@ public class charactercontroller : MonoBehaviour
         Cursor.visible = false;
         ActiveState = PlayerState.Active;
         currentFloor = 2;
+        storyResearchGathered = false;
     }
 
     void Update()
@@ -288,5 +291,15 @@ public class charactercontroller : MonoBehaviour
     {
         amalgamHint.transform.position = this.transform.position;
         amalgamHint.SetActive(true);
+    }
+
+    public void badEnding()
+    {
+
+    }
+
+    public void goodEnding()
+    {
+
     }
 }
