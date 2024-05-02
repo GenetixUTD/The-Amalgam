@@ -14,7 +14,8 @@ public class ItemPickup : Interactable
         Log,
         Keycard,
         Monitor,
-        Research
+        Research,
+        Jacob
     }
     public PickupType InteractableType;
     public int AmmoBoxSize;
@@ -68,6 +69,10 @@ public class ItemPickup : Interactable
         {
             PlayerCharacter.storyResearchGathered = true;
             this.gameObject.SetActive(false);
+        }
+        else if(InteractableType == PickupType.Jacob)
+        {
+            PlayerCharacter.goodEnding();
         }
     }
 }

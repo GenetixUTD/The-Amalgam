@@ -62,7 +62,7 @@ public class LiftControl : MonoBehaviour
             closeWindow();
         }
 
-        if(PasscodeEntryField.text.Length == 3)
+        if(PasscodeEntryField.text.Length == subFloorPasscode.Length)
         {
             if (string.Equals(PasscodeEntryField.text.ToString(), subFloorPasscode))
             {

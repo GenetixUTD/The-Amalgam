@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class charactercontroller : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class charactercontroller : MonoBehaviour
 
     [SerializeField] public bool[] unlockedFloors;
 
-    private float InteractRange = 5.0f;
+    private float InteractRange = 10.0f;
     private GameObject previousLook;
 
     public GameObject PauseMenu;
@@ -295,11 +296,11 @@ public class charactercontroller : MonoBehaviour
 
     public void badEnding()
     {
-
+        SceneManager.LoadScene("BadEnding");
     }
 
     public void goodEnding()
     {
-
+        SceneManager.LoadScene("GoodEnding");
     }
 }

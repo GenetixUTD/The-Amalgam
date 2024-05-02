@@ -54,6 +54,7 @@ public class AmalgamCentralAI : MonoBehaviour
         interuptedEvent = null;
         FSMLogic = GetComponent<AmalgamFSM>();
         pauseTracker = false;
+        this.transform.position = OffMap.transform.position;
         /*states = new Dictionary<Type, EmptyState>()
         {
             {typeof(RoamingState), new RoamingState() },

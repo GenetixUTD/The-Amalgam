@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/DraftLevel.unity
     guid: a1f435349655ef34aa88c7c4442a0381
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 7a0222a27c95fff4c9c72d53e4c500d0
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: d246b285c36df494886ca6f687f004d4
   m_configObjects: {}
