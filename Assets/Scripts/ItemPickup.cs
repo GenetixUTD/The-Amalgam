@@ -46,10 +46,12 @@ public class ItemPickup : Interactable
         else if(InteractableType == PickupType.Log)
         {
             PlayerCharacter.unlockLog(AudioLogIndex);
+            Destroy(this.gameObject);
         }
         else if(InteractableType == PickupType.Keycard)
         {
             PlayerCharacter.unlockFloor(keycardFloor);
+            Destroy(this.gameObject);
         }
     }
 }

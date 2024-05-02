@@ -209,7 +209,7 @@ public class charactercontroller : MonoBehaviour
                 }
                 
             }
-            if(hit.transform.gameObject.tag == "HideLocker" && !amalgamReference.playerInSight)
+            else if(hit.transform.gameObject.tag == "HideLocker" && !amalgamReference.playerInSight)
             {
                 hit.transform.gameObject.transform.GetComponentInParent<Locker>().EnableGlow();
                 previousLook = hit.transform.gameObject;
@@ -281,7 +281,7 @@ public class charactercontroller : MonoBehaviour
 
     public void unlockFloor(int floorID)
     {
-        unlockedFloors[floorID] = true;
+        unlockedFloors[floorID + 1] = true;
     }
 
     public void updateAmalgamHint()

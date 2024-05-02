@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Log
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5840ec4b981141042af00933dc8732e5, type: 3}
+      propertyPath: m_TagString
+      value: AmmoBox
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -107,6 +111,7 @@ MonoBehaviour:
   InteractableType: 3
   AmmoBoxSize: 0
   AudioLogIndex: 1
+  keycardFloor: 0
 --- !u!114 &5428106384980847949
 MonoBehaviour:
   m_ObjectHideFlags: 0
