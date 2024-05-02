@@ -29,6 +29,7 @@ public class AmalgamCentralAI : MonoBehaviour
     public Transform[] currentAmalgamSpawns; 
 
     public float tensionMeter;
+    public float boredMeter;
 
     private int randomIndex;
 
@@ -47,6 +48,7 @@ public class AmalgamCentralAI : MonoBehaviour
     private void Start()
     {
         stunned = false;
+        boredMeter = 0f;
         maxHealth = 7;
         stunHealth = maxHealth;
         interuptedEvent = null;

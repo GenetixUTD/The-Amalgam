@@ -12,6 +12,7 @@ public class RoamingState : EmptyState
     private Transform centerPoint;
     private bool pointFound;
 
+    private float boredGainTimer;
     private NavMeshAgent agent;
 
     public RoamingState()
@@ -32,13 +33,19 @@ public class RoamingState : EmptyState
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-        
 
-        if(!pointFound)
+        boredGainTimer += Time.deltaTime;
+
+        if(boredGainTimer > 1)
+        {
+            amalgamBrain.boredMeter += UnityEngine.Random.Range(0f, 5f);
+            boredGainTimer = 0;
+        }
+        if (!pointFound)
         {
             //Find suitable Roam Position
             Vector3 point;
-            if(RandomPointOnNav(centerPoint.position, SearchRange, out point))
+            if (RandomPointOnNav(centerPoint.position, SearchRange, out point))
             {
                 //Set roam position in navmeshagent
                 agent.SetDestination(point);
@@ -46,12 +53,11 @@ public class RoamingState : EmptyState
             }
         }
         // if the agent is close enough to the random point
-        else if(agent.remainingDistance <= agent.stoppingDistance && pointFound)
+        else if (agent.remainingDistance <= agent.stoppingDistance && pointFound)
         {
             //idle
             return 4;
         }
-
         if (amalgamBrain.playerInSight)
         {
             return 5;
@@ -64,7 +70,7 @@ public class RoamingState : EmptyState
         {
             return 1;
         }
-        else if(amalgamBrain.tensionMeter >= 100)
+        else if(amalgamBrain.tensionMeter >= 100 || amalgamBrain.boredMeter >= 100)
         {
             return 3;
         }
@@ -74,7 +80,7 @@ public class RoamingState : EmptyState
 
     public override void stateExit(AmalgamCentralAI amalgamBrain)
     {
-
+        amalgamBrain.boredMeter = 0;
     }
 
     public bool RandomPointOnNav(Vector3 centerPoint, float range, out Vector3 resultPoint)
