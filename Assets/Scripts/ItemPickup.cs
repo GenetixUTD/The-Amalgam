@@ -10,11 +10,13 @@ public class ItemPickup : Interactable
         Ammo,
         Box,
         Other,
-        Log
+        Log,
+        Keycard
     }
     public PickupType InteractableType;
     public int AmmoBoxSize;
     public int AudioLogIndex;
+    public int keycardFloor;
 
     private void Start()
     {
@@ -44,6 +46,10 @@ public class ItemPickup : Interactable
         else if(InteractableType == PickupType.Log)
         {
             PlayerCharacter.unlockLog(AudioLogIndex);
+        }
+        else if(InteractableType == PickupType.Keycard)
+        {
+            PlayerCharacter.unlockFloor(keycardFloor);
         }
     }
 }

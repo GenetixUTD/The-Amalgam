@@ -36,6 +36,8 @@ public class charactercontroller : MonoBehaviour
 
     [SerializeField] public bool[] unlockedLogs;
 
+    [SerializeField] public bool[] unlockedFloors;
+
     private float InteractRange = 5.0f;
     private GameObject previousLook;
 
@@ -272,5 +274,10 @@ public class charactercontroller : MonoBehaviour
     public void unlockLog(int logID)
     {
         unlockedLogs[logID] = true;
+    }
+
+    public void unlockFloor(int floorID)
+    {
+        unlockedFloors[floorID] = true;
     }
 }

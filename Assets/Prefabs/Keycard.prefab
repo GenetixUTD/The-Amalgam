@@ -84,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 674ec763f3835624ea24ac0fb48de92f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5541003096451637148}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 674ec763f3835624ea24ac0fb48de92f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2503461619065723554}
   m_SourcePrefab: {fileID: 100100000, guid: 674ec763f3835624ea24ac0fb48de92f, type: 3}
 --- !u!1 &2004934352356920827 stripped
 GameObject:
@@ -108,3 +111,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &2503461619065723554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004934352356920827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e80c3adc55497445b69736986304491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemGlow: {fileID: 5541003096451637148}
+  InteractableType: 4
+  AmmoBoxSize: 0
+  AudioLogIndex: 0
+  keycardFloor: 0
