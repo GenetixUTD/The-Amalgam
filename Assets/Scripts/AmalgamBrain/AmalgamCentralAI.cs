@@ -8,7 +8,9 @@ using System.Linq;
 
 public class AmalgamCentralAI : MonoBehaviour
 {
+    private float maxHealth;
     private float stunHealth;
+    private bool stunned;
 
     public bool playerInSight;
 
@@ -44,8 +46,12 @@ public class AmalgamCentralAI : MonoBehaviour
 
     private void Start()
     {
+        stunned = false;
+        maxHealth = 7;
+        stunHealth = maxHealth;
         interuptedEvent = null;
         FSMLogic = GetComponent<AmalgamFSM>();
+        pauseTracker = false;
         /*states = new Dictionary<Type, EmptyState>()
         {
             {typeof(RoamingState), new RoamingState() },
@@ -56,8 +62,9 @@ public class AmalgamCentralAI : MonoBehaviour
             {typeof(LeavingState), new LeavingState() }
         };*/
         tensionMeter = 100;
+        tensionDecaying = true;
         tensionDecayTimer = 0;
-        Debug.Log(states.ToList());
+        currentAmalgamSpawns = fetchAmalgamSpawns();
         FSMLogic.GrabAllStates(states);
         //gameObject.GetComponent<AmalgamFSM>().enabled = false;
     }
@@ -75,24 +82,32 @@ public class AmalgamCentralAI : MonoBehaviour
             pauseTracker = true;
             Debug.Log("Pause");
         }
-        else if (stateTracker != charactercontroller.PlayerState.Paused && pauseTracker == true)
+        else if (stateTracker != charactercontroller.PlayerState.Paused && pauseTracker == true && !stunned)
         {
-            Debug.Log("unpause");
+            
             if (!tensionDecaying)
             {
+                Debug.Log("unpause");
                 gameObject.GetComponent<AmalgamFSM>().enabled = true;
             } 
             pauseTracker = false;
         }
+
         stateTracker = playerTracker.GetComponent<charactercontroller>().ActiveState;
-        if (tensionMeter == 0 && !this.GetComponent<AmalgamFSM>().enabled && pauseTracker != true)
+
+
+        if (tensionMeter == 0 && !this.GetComponent<AmalgamFSM>().enabled && pauseTracker != true && !stunned)
         {
-            Debug.Log("newspawn");
-            currentAmalgamSpawns = fetchAmalgamSpawns();
-            startAmalgam();
+            if(playerTracker.GetComponent<charactercontroller>().currentFloor != 100)
+            {
+                Debug.Log("newspawn");
+                currentAmalgamSpawns = fetchAmalgamSpawns();
+                startAmalgam();
+            }
         }
 
-        if((tensionMeter >= 100 && !this.GetComponent<AmalgamFSM>().enabled || tensionDecaying) && pauseTracker == false)
+
+        if(((tensionMeter >= 100 && !this.GetComponent<AmalgamFSM>().enabled) || tensionDecaying) && pauseTracker == false)
         {
             tensionDecaying = true;
             tensionDecayTimer += Time.deltaTime;
@@ -104,8 +119,25 @@ public class AmalgamCentralAI : MonoBehaviour
             tensionMeter = Mathf.Clamp(tensionMeter, 0, 100);
             if(tensionMeter == 0)
             {
+                Debug.Log("newspawn");
+                currentAmalgamSpawns = fetchAmalgamSpawns();
+                startAmalgam();
                 tensionDecaying = false;
             }
+        }
+
+        if(stunHealth == 0 && !stunned && !tensionDecaying && !pauseTracker)
+        {
+            StartCoroutine(OnStun());
+        }
+
+        if(stunned)
+        {
+            this.GetComponent<AmalgamFSM>().enabled = false;
+        }
+        else if (!stunned && !pauseTracker && !tensionDecaying && stunHealth != 0)
+        {
+            this.GetComponent<AmalgamFSM>().enabled = true;
         }
         
     }
@@ -164,6 +196,7 @@ public class AmalgamCentralAI : MonoBehaviour
         this.GetComponent<NavMeshAgent>().enabled = false;
         this.GetComponent<AmalgamFSM>().enabled = false;
         this.gameObject.transform.position = OffMap.position;
+        tensionMeter = 100;
     }
 
     public void PlayerDeath()
@@ -173,5 +206,23 @@ public class AmalgamCentralAI : MonoBehaviour
         playerTracker.GetComponent<CharacterController>().enabled = false;
         playerTracker.gameObject.transform.position = playerRespawnLocation.position;
         playerTracker.GetComponent<CharacterController>().enabled = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if(other.tag == "bullet")
+        {
+            stunHealth -= 1;
+            Destroy(other.gameObject);
+        }
+    }
+
+    private IEnumerator OnStun()
+    {
+        stunned = true;
+        yield return new WaitForSeconds(5f);
+        stunned = false;
+        stunHealth = maxHealth;
     }
 }

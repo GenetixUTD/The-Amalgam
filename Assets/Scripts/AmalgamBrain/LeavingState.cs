@@ -32,7 +32,7 @@ public class LeavingState : EmptyState
         {
             return 5;
         }
-        else if(agent.remainingDistance < 5)
+        else if(agent.remainingDistance < 1)
         {
             amalgamBrain.stopAmalgam();
         }

@@ -62,5 +62,7 @@ public class DoorLock : MonoBehaviour
         PlayerController.ActiveState = charactercontroller.PlayerState.Active;
         PasscodeEntryField.text = "";
         this.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

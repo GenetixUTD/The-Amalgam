@@ -80,6 +80,8 @@ public class LiftControl : MonoBehaviour
         PasscodePanel.SetActive(false);
         floorButtonPanel.SetActive(true);
         this.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void roofButtonPressed()
