@@ -16,6 +16,8 @@ public class LiftControl : MonoBehaviour
 
     public string subFloorPasscode;
 
+    public GameObject floor1button;
+    public GameObject floor0button;
     public GameObject roofButton;
 
     private void Start()
@@ -40,6 +42,7 @@ public class LiftControl : MonoBehaviour
         {
 
         }
+        
         
         if(Floor == 3)
         {
@@ -71,6 +74,15 @@ public class LiftControl : MonoBehaviour
                 PasscodeEntryField.text = "";
                 closeWindow();
             }
+        }
+
+        if (thisElevator.verifyPlayerAuth(1))
+        {
+            floor1button.SetActive(true);
+        }
+        if (thisElevator.verifyPlayerAuth(0))
+        {
+            floor0button.SetActive(true);
         }
     }
 
