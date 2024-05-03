@@ -26,19 +26,20 @@ public class HuntingState : EmptyState
 
         agent.SetDestination(amalgamBrain.interuptedEvent.transform.position);
 
-        if(!agent.hasPath)
+        if(amalgamBrain.playerInSight)
         {
-            amalgamBrain.interuptedEvent.SetActive(false);
-            return 3;
+            return 5;
         }
-        else if(agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.transform.position))
+        if(agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.transform.position))
         {
             amalgamBrain.interuptedEvent.SetActive(false);
             return 4;
         }
-        else if(amalgamBrain.playerInSight)
-        { 
-            return 5;
+        else if(!agent.hasPath)
+        {
+            amalgamBrain.interuptedEvent.SetActive(false);
+            return 3;
+            
         }
         else
         {

@@ -139,6 +139,11 @@ public class AmalgamCentralAI : MonoBehaviour
             StartCoroutine(OnStun());
         }
 
+        if(this.GetComponent<AmalgamFSM>().enabled == false && interuptedEvent != null)
+        {
+            interuptedEvent = null;
+        }
+
         if(stunned)
         {
             this.GetComponent<AmalgamFSM>().enabled = false;
