@@ -92,6 +92,10 @@ public class QTEGame : MonoBehaviour
             {
                 nextQTE();
             }
+            else if((QTEButton == 1 && Input.GetKeyDown(KeyCode.E)) || (QTEButton == 0 && Input.GetKeyDown(KeyCode.F)))
+            {
+                gameStop();
+            }
         }
     }
 
