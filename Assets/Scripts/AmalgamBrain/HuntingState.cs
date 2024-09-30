@@ -8,6 +8,8 @@ public class HuntingState : EmptyState
 {
     private NavMeshAgent agent;
 
+    private float searchTimer;
+
     public HuntingState()
     {
         
@@ -18,24 +20,25 @@ public class HuntingState : EmptyState
         agent = GetComponent<NavMeshAgent>();
         amalgamBrain.footstepFrequency = amalgamBrain.sprintingFootstepFrequency;
         AkSoundEngine.SetSwitch("AmalgamFootsteps", "Sprinting", this.gameObject);
+        searchTimer = 0;
         agent.speed = 15f;
     }
 
     public override int stateUpdate(AmalgamCentralAI amalgamBrain)
     {
-
+        searchTimer += Time.deltaTime;
         agent.SetDestination(amalgamBrain.interuptedEvent.transform.position);
 
         if(amalgamBrain.playerInSight)
         {
             return 5;
         }
-        if(agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.transform.position))
+        if (agent.remainingDistance < 5f && !Physics.Linecast(this.transform.position, amalgamBrain.interuptedEvent.transform.position))
         {
             amalgamBrain.interuptedEvent.SetActive(false);
             return 4;
         }
-        else if(!agent.hasPath)
+        else if (!agent.hasPath && searchTimer > 5f)
         {
             amalgamBrain.interuptedEvent.SetActive(false);
             return 3;

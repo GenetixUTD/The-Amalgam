@@ -72,7 +72,7 @@ public class AmalgamCentralAI : MonoBehaviour
         tensionMeter = 100;
         tensionDecaying = true;
         tensionDecayTimer = 0;
-        currentAmalgamSpawns = fetchAmalgamSpawns();
+        //currentAmalgamSpawns = fetchAmalgamSpawns();
         FSMLogic.GrabAllStates(states);
         //gameObject.GetComponent<AmalgamFSM>().enabled = false;
     }
@@ -203,6 +203,7 @@ public class AmalgamCentralAI : MonoBehaviour
 
     public Transform[] fetchAmalgamSpawns()
     {
+        Debug.Log("Fetched: " + playerTracker.GetComponent<charactercontroller>().currentFloor);
         switch (playerTracker.GetComponent<charactercontroller>().currentFloor)
         {
             case 2:
